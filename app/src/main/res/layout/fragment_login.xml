@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purpil_6"
+    tools:context=".view.fragment.LoginFragment">
+    <ImageView
+        android:id="@+id/iv_login"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margin_28"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:paddingTop="@dimen/margin_8"
+        android:paddingBottom="@dimen/margin_8"
+        android:src="@drawable/logo"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_login"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_4"
+        android:background="@drawable/border_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_login">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/view_line_login"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:text="Tài khoản"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize18" />
+
+                <TextView
+                    android:id="@+id/tv_warning_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:drawableStart="@drawable/ic_warning"
+                    android:drawablePadding="@dimen/margin_8"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:text="Tài khoản không đúng"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/textSize13"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:visibility="gone"
+                    tools:ignore="UseCompatTextViewDrawableXml" />
+
+                <com.example.mongodbrealmcourse.view.customview.LoginItemView
+                    android:id="@+id/item_email_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    app:item_icon="@drawable/ic_email"
+                    app:item_icon_red="@drawable/ic_email_red"
+                    app:item_hint="Email"
+                    app:item_asterisk="true"
+                    android:inputType="textEmailAddress"/>
+
+                <com.example.mongodbrealmcourse.view.customview.LoginItemView
+                    android:id="@+id/item_password_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    app:item_icon="@drawable/ic_password"
+                    app:item_icon_red="@drawable/ic_password_red"
+                    app:item_hint="Password"
+                    app:item_asterisk="true"
+                    android:inputType="textPassword"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_policy_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_12"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_28">
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/cb_policy_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:layout_alignTop="@+id/tv_policy_login"
+                        android:layout_alignBottom="@+id/tv_policy_login"
+                        app:buttonTint="@color/purpil_2" />
+
+                    <TextView
+                        android:id="@+id/tv_policy_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/cb_policy_login"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:layout_marginTop="@dimen/margin_16"
+                        android:text="Tôi đồng ý với các Chính sách và thoả thuận"
+                        android:textAlignment="viewStart"
+                        android:textSize="@dimen/textSize16"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view_line_login"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:background="@color/purpil_4"
+            app:layout_constraintBottom_toTopOf="@id/btn_login" />
+
+
+        <ProgressBar
+            android:id="@+id/pb_login"
+            android:theme="@style/PrimaryStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/btn_login"
+            app:layout_constraintBottom_toBottomOf="@id/btn_login"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_google"
+            android:layout_marginBottom="@dimen/margin_16"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/margin_22">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/purpil_2"
+                android:fontFamily="@font/svn_avo_bold"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_2"
+                android:text="Đăng nhập"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSize15" />
+
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/pb_google"
+            android:theme="@style/RedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/btn_google"
+            app:layout_constraintBottom_toBottomOf="@id/btn_google"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_google"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="@dimen/margin_8"
+            app:cardCornerRadius="@dimen/margin_22"
+            app:layout_constraintBottom_toTopOf="@id/btn_register_now">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_rd_8dp">
+
+                <ImageView
+                    android:id="@+id/ic_google"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_google"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_12"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_12"
+                    android:layout_marginEnd="@dimen/margin_36"
+                    android:layout_toEndOf="@id/ic_google"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/margin_2"
+                    android:text="Đăng nhập Google"
+                    android:textColor="#E10A0A"
+                    app:autoSizeMaxTextSize="@dimen/textSize15"
+                    app:autoSizeMinTextSize="6sp"
+                    app:autoSizeTextType="uniform" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/btn_register_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/svn_avo_bold"
+            android:gravity="center"
+            android:text="Không có tài khoản?"
+            android:textColor="@color/colorTextPrimary"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_marginRight="@dimen/margin_24"
+            android:textSize="@dimen/textSize13"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_register"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_login"
+        android:background="@drawable/border_bg"
+        android:visibility="gone">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/view_line_register"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:text="Đăng kí tài khoản"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textSize18" />
+
+                <TextView
+                    android:id="@+id/tv_warning_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:drawableStart="@drawable/ic_warning"
+                    android:drawablePadding="@dimen/margin_8"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:text="Tài khoản không đúng"
+                    android:textColor="#F4152F"
+                    android:textSize="@dimen/textSize13"
+                    android:layout_marginTop="@dimen/margin_8"
+                    tools:ignore="UseCompatTextViewDrawableXml"
+                    android:visibility="gone"/>
+
+                <com.example.mongodbrealmcourse.view.customview.LoginItemView
+                    android:id="@+id/item_name_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    app:item_icon="@drawable/ic_user"
+                    app:item_icon_red="@drawable/ic_password_red"
+                    app:item_hint="Tên của bạn"
+                    app:item_asterisk="true"
+                    android:inputType="text"/>
+
+                <com.example.mongodbrealmcourse.view.customview.LoginItemView
+                    android:id="@+id/item_email_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    app:item_icon="@drawable/ic_email"
+                    app:item_icon_red="@drawable/ic_email_red"
+                    app:item_hint="Email"
+                    app:item_asterisk="true"
+                    android:inputType="textEmailAddress"/>
+
+                <com.example.mongodbrealmcourse.view.customview.LoginItemView
+                    android:id="@+id/item_password_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    app:item_icon="@drawable/ic_password"
+                    app:item_icon_red="@drawable/ic_password_red"
+                    app:item_hint="Mật khẩu"
+                    app:item_asterisk="true"
+                    android:inputType="textPassword"/>
+
+                <com.example.mongodbrealmcourse.view.customview.LoginItemView
+                    android:id="@+id/item_password_submit_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginRight="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    app:item_icon="@drawable/ic_password"
+                    app:item_icon_red="@drawable/ic_password_red"
+                    app:item_hint="Nhập lại mật khẩu"
+                    app:item_asterisk="true"
+                    android:inputType="textPassword"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_policy_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_28"
+                    android:layout_marginTop="@dimen/margin_12"
+                    android:layout_marginBottom="@dimen/margin_24"
+                    android:layout_marginRight="@dimen/margin_28">
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/cb_policy_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:buttonTint="@color/purpil_2" />
+
+                    <TextView
+                        android:id="@+id/tv_policy_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_toEndOf="@id/cb_policy_register"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:text="Chấp nhận điều khoản"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textAlignment="viewStart"
+                        android:textSize="@dimen/textSize13"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view_line_register"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@id/btn_register" />
+
+        <ProgressBar
+            android:id="@+id/pb_register_register"
+            android:theme="@style/PrimaryStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/btn_register"
+            app:layout_constraintBottom_toBottomOf="@id/btn_register"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_register"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="@dimen/margin_8"
+            app:layout_constraintBottom_toTopOf="@id/btn_google_regis"
+            app:cardBackgroundColor="@color/purpil_2"
+            app:cardCornerRadius="@dimen/margin_22">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/svn_avo_bold"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_2"
+                android:text="Đăng kí"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/textSize15" />
+
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/pb_google_regis"
+            android:theme="@style/RedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/btn_google_regis"
+            app:layout_constraintBottom_toBottomOf="@id/btn_google_regis"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_google_regis"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="@dimen/margin_8"
+            app:layout_constraintBottom_toTopOf="@id/btn_login_now"
+            app:cardCornerRadius="@dimen/margin_22">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_rd_8dp">
+
+                <ImageView
+                    android:id="@+id/ic_google_rigis"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_google"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_12"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_12"
+                    android:layout_marginEnd="@dimen/margin_36"
+                    android:layout_toEndOf="@id/ic_google_rigis"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/margin_2"
+                    android:text="Đăng kí Google"
+                    android:textColor="#C80B0B"
+                    app:autoSizeMaxTextSize="@dimen/textSize15"
+                    app:autoSizeMinTextSize="6sp"
+                    app:autoSizeTextType="uniform" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/btn_login_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/svn_avo"
+            android:gravity="center"
+            android:text="Đã có tài khoản?"
+            android:textColor="@color/colorTextPrimary"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingBottom="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_marginRight="@dimen/margin_24"
+            android:textSize="@dimen/textSize13"
+            app:layout_constraintBottom_toTopOf="@id/view_bottom_register" />
+
+        <View
+            android:id="@+id/view_bottom_register"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

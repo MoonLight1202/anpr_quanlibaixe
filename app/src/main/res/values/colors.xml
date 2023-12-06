@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5E5D5D</color>
+    <color name="colorPrimaryDark">#5E5D5D</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorTextPrimary">#ffffff</color>
+    <color name="colorTextSecondary">#A3FFFFFF</color>
+    <color name="colorBadge">#f4d415</color>
+    <string name="btn_card_bg" translatable="false">#d6d6d6</string>
+
+    <color name="purpil_1">#692be0</color>
+    <color name="purpil_2">#814de5</color>
+    <color name="purpil_3">#9d75eb</color>
+    <color name="purpil_4">#ba9df1</color>
+    <color name="purpil_5">#d6c5f7</color>
+    <color name="purpil_6">#f3eefc</color>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nhận diện biển số xe</string>
+    <string name="menu_group">Cài đặt</string>
+    <string name="menu_activity">Màn hình</string>
+    <string name="instructions">Chụp ảnh biển số phương tiện để nhận dạng</string>
+    <string name="exit_btn">Thoát</string>
+</resources>

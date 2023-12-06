@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/view_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round_purpil_4">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:src="@drawable/ic_user" />
+
+        <com.example.mongodbrealmcourse.view.customview.DashedLineView
+            android:id="@+id/line"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_icon"
+            android:layout_alignBottom="@id/iv_icon"
+            android:layout_marginTop="-12dp"
+            android:layout_marginBottom="-12dp"
+            android:layout_toEndOf="@id/iv_icon"
+            app:color="@color/colorTextPrimary"
+            app:dashGap="4dp"
+            app:dashLength="4dp"
+            app:dashThickness="1dp" />
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_icon"
+            android:layout_alignBottom="@id/iv_icon"
+            android:layout_marginTop="-16dp"
+            android:layout_marginBottom="-16dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/svn_avo"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/margin_12"
+            android:paddingRight="@dimen/margin_12"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:layout_toEndOf="@id/line"
+            android:layout_toStartOf="@id/tv_asterisk"/>
+
+        <TextView
+            android:id="@+id/tv_asterisk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:textColor="#B31111"
+            android:textSize="@dimen/textSize22" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        android:drawableStart="@drawable/ic_warning"
+        android:drawablePadding="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_4"
+        android:fontFamily="@font/svn_avo_bold"
+        android:text="Không được rồng"
+        android:textColor="#B31111"
+        android:textSize="@dimen/textSize12"
+        tools:ignore="UseCompatTextViewDrawableXml"
+        android:visibility="gone"/>
+
+</LinearLayout>

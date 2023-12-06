@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <declare-styleable name="DividerView">
+        <attr name="color" format="color" />
+        <attr name="dashLength" format="dimension" />
+        <attr name="dashGap" format="dimension" />
+        <attr name="dashThickness" format="dimension" />
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="LoginItemView">
+        <attr name="item_icon" format="integer|reference" />
+        <attr name="item_icon_red" format="integer|reference" />
+        <attr name="item_hint" format="string" />
+        <attr name="item_asterisk" format="boolean"/>
+        <attr name="android:inputType"/>
+        <attr name="android:focusable"/>
+    </declare-styleable>
+
+    <style name="PrimaryStyle">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+    <style name="RedStyle">
+        <item name="colorAccent">#E61736</item>
+    </style>
+    <style name="Base.Theme.CuuToi" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+</resources>

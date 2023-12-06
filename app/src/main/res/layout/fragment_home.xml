@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/scroll_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purpil_6"
+    tools:context=".view.fragment.main.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_camera_container"
+            android:layout_width="match_parent"
+            android:layout_height="311dp"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_8"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.031">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.camera.view.PreviewView
+                    android:id="@+id/viewFinder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_take_photo"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/bg_white_round_accent_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_baseline_photo_camera_24"
+                    android:tint="@color/purpil_1"
+                    app:contentPadding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_switch_camera"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_white_round_accent_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_outline_camera_front_24"
+                    android:tint="@color/purpil_1"
+                    app:contentPadding="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_take_photo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_take_photo" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_gallery"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:background="@drawable/bg_white_round_accent_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_image"
+                    android:tint="@color/purpil_1"
+                    app:contentPadding="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_take_photo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_take_photo" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/tv_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8"
+            android:text="@string/instructions"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/cv_info_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_camera_container" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_camera_container"
+            app:layout_constraintVertical_bias="0.100000024">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/purpil_5">
+
+                <TextView
+                    android:id="@+id/tv_numberplate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:lineSpacingExtra="20dp"
+                    android:text="INFO PLATE"
+                    android:textAlignment="center"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_country_prefix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_numberplate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.684" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/tv_info_detech"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:fontFamily="@font/svn_avo_bold"
+            android:text="Thông tin phân tích"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_info_container" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="149dp"
+                android:layout_height="148dp"
+                android:visibility="invisible"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_8"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.mongodbrealmcourse.view.customview.CustomImageView
+                    android:id="@+id/img_rssult"
+                    android:layout_width="120dp"
+                    android:layout_height="160dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/bienso" />
+
+                <ImageView
+                    android:id="@+id/iv_time_create"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:src="@drawable/baseline_access_time_24"
+                    android:layout_toEndOf="@+id/img_rssult"
+                    app:layout_constraintTop_toTopOf="@+id/img_rssult" />
+                <ImageView
+                    android:id="@+id/iv_score_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_below="@id/iv_time_create"
+                    android:src="@drawable/ic_baseline_scoreboard_24"
+                    android:layout_toEndOf="@+id/img_rssult" />
+
+                <ImageView
+                    android:id="@+id/iv_location"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:src="@drawable/ic_language"
+                    android:layout_below="@+id/iv_score_icon"
+                    android:layout_toEndOf="@+id/img_rssult" />
+                <TextView
+                    android:id="@+id/tv_time_create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_4"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Thời gian:"
+                    android:textSize="12sp"
+                    android:layout_toEndOf="@id/iv_time_create"
+                    android:layout_alignTop="@+id/iv_time_create" />
+
+                <TextView
+                    android:id="@+id/tv_vehicle_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_4"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Độ chính xác:"
+                    android:textSize="12sp"
+                    android:layout_below="@+id/tv_time_create"
+                    android:layout_toEndOf="@+id/iv_score_icon" />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_4"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Quốc gia"
+                    android:textSize="12sp"
+                    android:layout_toEndOf="@id/iv_location"
+                    android:layout_below="@id/tv_vehicle_score"/>
+
+                <com.example.mongodbrealmcourse.view.customview.CustomImageView
+                    android:id="@+id/img_rssult_crop"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_below="@id/iv_location"
+                    android:layout_toEndOf="@+id/img_rssult"
+                    app:srcCompat="@drawable/biensocut" />
+
+                <ImageView
+                    android:id="@+id/iv_QRVeXe"
+                    android:layout_width="@dimen/margin_200"
+                    android:layout_height="@dimen/margin_200"
+                    android:layout_below="@id/img_rssult"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="105dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="105dp"
+                    android:layout_marginBottom="@dimen/margin_50"
+                    android:src="@drawable/ic_qr_scan"
+                    android:visibility="invisible"/>
+            </RelativeLayout>
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purpil_5"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnBack_profileEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/baseline_arrow_back_ios_24" />
+
+        <TextView
+            android:id="@+id/edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Chỉnh sửa hồ sơ"
+            android:fontFamily="@font/svn_avo_bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_photoUser"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/edit_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="158dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.8"
+            android:scaleType="centerCrop"
+            app:cardCornerRadius="@dimen/margin_50">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/edit_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="158dp"
+            android:layout_marginTop="67dp"
+            android:scaleType="centerCrop"
+            app:cardCornerRadius="@dimen/margin_20">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_3"
+                android:src="@drawable/ic_user"/>
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="28dp"
+            android:text="Họ tên"
+            android:textSize="15sp"
+            android:fontFamily="@font/svn_avo"/>
+        <EditText
+            android:id="@+id/edt_username"
+            android:layout_marginTop="14dp"
+            android:hint="Họ tên"
+            android:textSize="15sp"
+            android:paddingStart="@dimen/margin_8"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+
+            android:background="@drawable/bg_round_purpil_4"/>
+
+        <TextView
+            android:layout_marginTop="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="28dp"
+            android:text="Địa chỉ"
+            android:textSize="15sp"
+            android:fontFamily="@font/svn_avo"/>
+        <EditText
+            android:id="@+id/edit_address"
+            android:layout_marginTop="14dp"
+            android:paddingStart="@dimen/margin_8"
+            android:hint="Đia chỉ"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textSize="15sp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/bg_round_purpil_4"/>
+
+        <TextView
+            android:id="@+id/tv_change_pass"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="@dimen/margin_28"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="28dp"
+            android:text="Đổi mật khẩu"
+            android:layout_gravity="right"
+            android:fontFamily="@font/svn_avo"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_round_purpil_4"
+        android:text="Cập nhật"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:fontFamily="@font/svn_avo_bold" />
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purpil_4"
+    android:layout_margin="@dimen/margin_3">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_plate_rcv"
+        android:layout_width="@dimen/margin_50"
+        android:layout_height="@dimen/margin_50"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:src="@drawable/imgtest" />
+    <TextView
+        android:id="@+id/tv_plate_rcv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_plate_rcv"
+        android:layout_alignBottom="@id/iv_plate_rcv"
+        android:layout_toEndOf="@id/iv_plate_rcv"
+        android:text="38D03405"
+        android:textSize="18sp"
+        android:fontFamily="@font/svn_avo_bold"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/tv_time_create_rcv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_plate_rcv"
+        android:layout_toEndOf="@id/iv_plate_rcv"
+        android:text="Ngày tạo: Thu Nov 16 18:33:30 GMT+07:00 2023"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/margin_50"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_plate_rcv"
+        android:layout_alignBottom="@id/iv_plate_rcv"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/baseline_arrow_24"/>
+</RelativeLayout>

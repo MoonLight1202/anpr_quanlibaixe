@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Plate Number</string>
+
+    <string name="menu_group">Settings</string>
+    <string name="menu_anpr" translatable="false">Anpr</string>
+    <string name="menu_activity">Activity</string>
+    <string name="instructions">Take an image of a vehicles plate to see results</string>
+
+    // Menu Buttons
+    <string name="openurl_btn" translatable="false">API Docs</string>
+    <string name="exit_btn">Exit</string>
+
+    // Developer Details
+    <string name="app_details" translatable="false">Android API Example v1.0</string>
+    <string name="copyright" translatable="false">Created by Keith Baker in collaboration with Plate Recognizer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+</resources>

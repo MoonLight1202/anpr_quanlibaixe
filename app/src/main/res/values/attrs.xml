@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ds">
+        <attr name="colorBackground" format="color" />
+        <attr name="colorBackgroundChild" format="color" />
+        <attr name="colorBackgroundQuestionExam" format="color" />
+        <attr name="colorText" format="color" />
+        <attr name="colorText_2" format="color" />
+        <attr name="colorTextBlack_3" format="color" />
+        <attr name="colorAccent_2" format="color" />
+        <attr name="colorGreen_Accent" format="color" />
+        <attr name="colorPrimary_Accent" format="color" />
+        <attr name="colorGreen_White" format="color" />
+        <attr name="colorWhite_Primary" format="color" />
+        <attr name="colorGray" format="color" />
+        <attr name="colorGray_alpha_25" format="color" />
+        <attr name="colorBackgroundChild_2" format="color" />
+        <attr name="colorBackgroundLessonLock" format="color" />
+        <attr name="colorBackgroundUnitLock" format="color" />
+        <attr name="colorSky" format="color" />
+        <attr name="colorBackgroundGreen_2" format="color" />
+        <attr name="colorWhite" format="color" />
+        <attr name="colorTextWhite_Gray10" format="color" />
+        <attr name="colorBackground2" format="color" />
+    </declare-styleable>
+</resources>
