@@ -91,7 +91,7 @@
                 android:layout_marginStart="@dimen/margin_8"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:text="Điều khoảng"/>
+                android:text="Điều khoản"/>
             <TextView
                 android:id="@+id/tv_policy_body"
                 android:layout_width="wrap_content"

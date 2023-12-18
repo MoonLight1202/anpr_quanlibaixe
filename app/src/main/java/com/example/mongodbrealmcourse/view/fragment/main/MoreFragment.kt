@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.mongodbrealmcourse.R
+import com.example.mongodbrealmcourse.view.fragment.BaseFragment
 import com.example.mongodbrealmcourse.viewmodel.listener.HomeListener
 
-class MoreFragment : Fragment() {
-    private var homeListener: HomeListener? = null
+class MoreFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

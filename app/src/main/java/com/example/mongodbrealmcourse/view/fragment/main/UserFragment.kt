@@ -9,11 +9,13 @@ import androidx.navigation.findNavController
 import com.example.mongodbrealmcourse.R
 import com.example.mongodbrealmcourse.databinding.FragmentLibraryBinding
 import com.example.mongodbrealmcourse.databinding.FragmentUserBinding
+import com.example.mongodbrealmcourse.view.fragment.BaseFragment
+import com.example.mongodbrealmcourse.viewmodel.callback.VoidCallback
 import com.example.mongodbrealmcourse.viewmodel.listener.HomeListener
+import com.example.mongodbrealmcourse.viewmodel.utils.AnimationHelper
 
-class UserFragment : Fragment() {
+class UserFragment : BaseFragment() {
     private var binding: FragmentUserBinding? = null
-    private var homeListener: HomeListener? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,7 +32,11 @@ class UserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.ivEditProfile?.setOnClickListener {
-            view.findNavController().navigate(R.id.action_main_fragment_to_editUserFragment)
+            AnimationHelper.scaleAnimation(it, object : VoidCallback {
+                override fun execute() {
+                    view.findNavController().navigate(R.id.action_main_fragment_to_editUserFragment)
+                }
+            }, 0.98f)
         }
     }
     companion object {

@@ -1,5 +1,5 @@
 package com.example.mongodbrealmcourse.viewmodel.listener
 
 interface HomeFragmentListener {
-    fun onInsertSuccess()
+    fun onInsertSuccess(id_user: String)
 }

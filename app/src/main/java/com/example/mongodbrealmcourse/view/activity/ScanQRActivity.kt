@@ -7,6 +7,8 @@ import android.widget.ImageButton
 import android.widget.Toast
 import com.example.mongodbrealmcourse.R
 import com.example.mongodbrealmcourse.databinding.ActivityMain2Binding
+import com.example.mongodbrealmcourse.viewmodel.callback.VoidCallback
+import com.example.mongodbrealmcourse.viewmodel.utils.AnimationHelper
 import com.journeyapps.barcodescanner.CaptureManager
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
 
@@ -22,7 +24,12 @@ class ScanQRActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener {
         setContentView(binding.root)
         barcode = binding.bcScanner
         barcode.findViewById<ImageButton>(R.id.btnFlashLight).setOnClickListener {
-            switchFlashlight(binding.root)
+            AnimationHelper.scaleAnimation(it, object : VoidCallback {
+                override fun execute() {
+                    switchFlashlight(binding.root)
+                }
+            }, 0.98f)
+
         }
         capture = CaptureManager(this, barcode )
         capture.apply {

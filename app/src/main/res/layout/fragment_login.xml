@@ -113,7 +113,7 @@
                         android:id="@+id/cb_policy_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:checked="true"
+                        android:checked="false"
                         android:layout_alignTop="@+id/tv_policy_login"
                         android:layout_alignBottom="@+id/tv_policy_login"
                         app:buttonTint="@color/purpil_2" />
@@ -125,7 +125,7 @@
                         android:layout_toEndOf="@id/cb_policy_login"
                         android:fontFamily="@font/svn_avo_bold"
                         android:layout_marginTop="@dimen/margin_16"
-                        android:text="Tôi đồng ý với các Chính sách và thoả thuận"
+                        android:text="Lưu tài khoản"
                         android:textAlignment="viewStart"
                         android:textSize="@dimen/textSize16"/>
                 </RelativeLayout>

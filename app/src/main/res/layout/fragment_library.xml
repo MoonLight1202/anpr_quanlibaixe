@@ -32,8 +32,27 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="8dp"
                 android:src="@drawable/ic_qr_scan" />
-
             <!-- Nút tìm kiếm -->
+            <ImageView
+                android:id="@+id/btn_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:src="@drawable/ic_filter"/>
+            <ImageView
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:src="@drawable/ic_add"/>
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/btn_search"
                 android:layout_width="wrap_content"
@@ -41,7 +60,9 @@
                 android:layout_gravity="right"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="8dp"
+                android:theme="@style/SearchViewStyle"
                 app:searchIcon="@drawable/ic_search" />
+
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>

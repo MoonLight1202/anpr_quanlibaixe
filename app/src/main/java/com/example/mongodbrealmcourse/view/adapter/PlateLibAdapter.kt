@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide
 import com.example.mongodbrealmcourse.R
 import com.example.mongodbrealmcourse.databinding.PlateItemRecyclerViewBinding
 import com.example.mongodbrealmcourse.model.`object`.PlateNumberObject
+import com.example.mongodbrealmcourse.viewmodel.callback.VoidCallback
+import com.example.mongodbrealmcourse.viewmodel.utils.AnimationHelper
 
 class PlateLibAdapter : ListAdapter<PlateNumberObject, PlateLibAdapter.MyViewHolder>(MyDiffCallback()) {
     class MyViewHolder(private val binding: PlateItemRecyclerViewBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -26,9 +28,14 @@ class PlateLibAdapter : ListAdapter<PlateNumberObject, PlateLibAdapter.MyViewHol
             binding.tvPlateRcv.text = item.infoPlate.uppercase()
             binding.tvTimeCreateRcv.text = "Thời gian: "+item.dateCreate
             binding.root.setOnClickListener {
-                val bundle = Bundle()
-                bundle.putParcelable("plateObject", item)
-                binding.root.findNavController().navigate(R.id.action_main_fragment_to_blankFragment, bundle)
+                AnimationHelper.scaleAnimation(it, object : VoidCallback {
+                    override fun execute() {
+                        val bundle = Bundle()
+                        bundle.putParcelable("plateObject", item)
+                        binding.root.findNavController().navigate(R.id.action_main_fragment_to_blankFragment, bundle)
+                    }
+                }, 0.98f)
+
             }
         }
     }

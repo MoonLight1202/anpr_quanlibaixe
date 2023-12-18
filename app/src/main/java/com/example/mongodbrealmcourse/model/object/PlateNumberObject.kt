@@ -5,8 +5,6 @@ import android.os.Parcelable
 import android.util.Log
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.PrimaryKey
-import java.io.Serializable
 
 @Entity
 data class PlateNumberObject(
@@ -15,18 +13,22 @@ data class PlateNumberObject(
     @ColumnInfo (name = "region") val region: String,
     @ColumnInfo (name = "type_car") val typeCar: String,
     @ColumnInfo (name = "pay") val pay: String,
+    @ColumnInfo (name = "cost") val cost: Int,
     @ColumnInfo (name = "accuracy") val accuracy: Float,
     @ColumnInfo (name = "img_plate") val imgPlate: String,
     @ColumnInfo (name = "img_plate_cut") val imgPlateCut: String,
     @ColumnInfo (name = "date_create") val dateCreate: String,
-) : Parcelable {
+    @ColumnInfo (name = "expiration_date") val expirationDate: String
+    ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
+        parcel.readInt(),
         parcel.readFloat(),
+        parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString()

@@ -9,9 +9,9 @@
     <TextView
         android:id="@+id/result_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_8"
-        android:lineSpacingMultiplier="10"
+        android:maxLines="5"
         android:text="@string/hello_blank_fragment" />
 
     <ImageView

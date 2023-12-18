@@ -11,6 +11,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.mongodbrealmcourse.R
 import com.example.mongodbrealmcourse.databinding.FragmentEditUserBinding
+import com.example.mongodbrealmcourse.viewmodel.callback.VoidCallback
+import com.example.mongodbrealmcourse.viewmodel.utils.AnimationHelper
 import com.example.mongodbrealmcourse.viewmodel.utils.PreferenceHelper
 import io.realm.Realm
 import io.realm.mongodb.App
@@ -21,13 +23,8 @@ import io.realm.mongodb.mongo.MongoDatabase
 import io.realm.mongodb.mongo.iterable.MongoCursor
 import org.bson.Document
 
-class EditUserFragment : Fragment() {
+class EditUserFragment : BaseFragment() {
     private var binding: FragmentEditUserBinding? = null
-    private val Appid = "number-plates-ayumd"
-    private lateinit var app: App
-    private lateinit var mongoDatabase: MongoDatabase
-    private lateinit var mongoClient: MongoClient
-    protected val preferenceHelper: PreferenceHelper by lazy { PreferenceHelper(requireContext()) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -101,23 +98,32 @@ class EditUserFragment : Fragment() {
         }
 
         binding?.saveBtn?.setOnClickListener {
-            val name = binding?.edtUsername?.text?.toString()
-            val address = binding?.editAddress?.text?.toString()
+            AnimationHelper.scaleAnimation(it, object : VoidCallback {
+                override fun execute() {
+                    val name = binding?.edtUsername?.text?.toString()
+                    val address = binding?.editAddress?.text?.toString()
 
-            val updateFilter = Document("email", preferenceHelper.current_account_email)
-            val updateDocument = Document("\$set", Document("name", name).append("address", address))
+                    val updateFilter = Document("email", preferenceHelper.current_account_email)
+                    val updateDocument = Document("\$set", Document("name", name).append("address", address))
 
-            mongoCollection.updateOne(updateFilter, updateDocument).getAsync { task ->
-                if (task.isSuccess) {
-                    Toast.makeText(requireContext(), "Cập nhật thành công", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(requireContext(), "Cập nhật thất bại", Toast.LENGTH_SHORT).show()
-                    Log.v("Update Error", task.error.toString())
+                    mongoCollection.updateOne(updateFilter, updateDocument).getAsync { task ->
+                        if (task.isSuccess) {
+                            Toast.makeText(requireContext(), "Cập nhật thành công", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(requireContext(), "Cập nhật thất bại", Toast.LENGTH_SHORT).show()
+                            Log.v("Update Error", task.error.toString())
+                        }
+                    }
                 }
-            }
+            }, 0.98f)
         }
         binding?.btnBackProfileEdit?.setOnClickListener {
-            findNavController().popBackStack()
+            AnimationHelper.scaleAnimation(it, object : VoidCallback {
+                override fun execute() {
+                    findNavController().popBackStack()
+                }
+            }, 0.98f)
+
         }
     }
     override fun onDestroyView() {

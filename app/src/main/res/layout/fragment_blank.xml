@@ -24,168 +24,238 @@
                 android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:layout_scrollFlags="scroll|enterAlways">
-                <ImageView
+                <LinearLayout
+                    android:id="@+id/layout_back"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:src="@drawable/baseline_arrow_back_ios_24"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trở về"
-                    android:layout_gravity="left"
-                    android:textColor="@color/colorTextPrimary"/>
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_arrow_back_ios_24"/>
+                    <TextView
+                        android:layout_width="@dimen/margin_50"
+                        android:layout_height="wrap_content"
+                        android:text="Trở về"
+                        android:textColor="@color/colorTextPrimary"/>
+                </LinearLayout>
+
 
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
-        <ImageView
-            android:id="@+id/iv_plate_full"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/margin_200"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Thông tin biển số"
-            android:textAlignment="center"/>
         <LinearLayout
+            android:id="@+id/layout_no_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_8"
-            android:layout_marginTop="4dp">
+            android:orientation="vertical"
+            android:visibility="gone">
             <ImageView
-                android:layout_width="@dimen/margin_30"
-                android:layout_height="@dimen/margin_30"
-                android:src="@drawable/biensocut"
-                android:layout_gravity="center_vertical"/>
+                android:layout_width="@dimen/margin_200"
+                android:layout_height="@dimen/margin_200"
+                android:src="@drawable/ic_parking"
+                android:layout_gravity="center"/>
             <TextView
-                android:id="@+id/tv_info_plate"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/margin_8"
-                android:text="Biển số:"/>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/svn_avo_bold"
+                android:text="Đã xảy ra lỗi \n Không thể hiển thị thông tin biển số!"
+                android:textAlignment="center"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/layout_result_plate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_8"
-            android:layout_marginTop="4dp">
+            android:orientation="vertical">
             <ImageView
-                android:layout_width="@dimen/margin_30"
-                android:layout_height="@dimen/margin_30"
-                android:src="@drawable/ic_baseline_car_24"
-                android:layout_gravity="center_vertical"/>
-            <TextView
-                android:id="@+id/tv_type_vehical"
+                android:id="@+id/iv_plate_full"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/margin_8"
-                android:text="Loại xe:"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_8"
-            android:layout_marginTop="4dp">
-            <ImageView
-                android:layout_width="@dimen/margin_30"
-                android:layout_height="@dimen/margin_30"
-                android:src="@drawable/baseline_access_time_24"
-                android:layout_gravity="center_vertical"/>
+                android:layout_height="@dimen/margin_200"/>
             <TextView
-                android:id="@+id/tv_time_create"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/margin_8"
-                android:text="Thời gian tạo:"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_8"
-            android:layout_marginTop="4dp">
-            <ImageView
-                android:layout_width="@dimen/margin_30"
-                android:layout_height="@dimen/margin_30"
-                android:src="@drawable/ic_baseline_scoreboard_24"
-                android:layout_gravity="center_vertical"/>
-            <TextView
-                android:id="@+id/tv_point"
+                android:layout_height="wrap_content"
+                android:text="Thông tin biển số"
+                android:fontFamily="@font/svn_avo_bold"
+                android:textAlignment="center"/>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/margin_8"
-                android:text="Độ chính xác:"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_8"
-            android:layout_marginTop="4dp">
-            <ImageView
-                android:layout_width="@dimen/margin_30"
-                android:layout_height="@dimen/margin_30"
-                android:src="@drawable/ic_language"
-                android:layout_gravity="center_vertical"/>
-            <TextView
-                android:id="@+id/tv_province"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/margin_8"
-                android:text="Tỉnh thành:"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_8"
-            android:layout_marginTop="4dp">
-            <ImageView
-                android:layout_width="@dimen/margin_30"
-                android:layout_height="@dimen/margin_30"
-                android:src="@drawable/ic_language"
-                android:layout_gravity="center_vertical"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/margin_8"
-                android:text="Trạng thái thanh toán:"/>
-            <TextView
-                android:id="@+id/tv_pay"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/margin_8"
-                android:textColor="#4CAF50"
-                android:text="Đã thanh toán"/>
-        </LinearLayout>
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/biensocut"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tv_info_plate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Biển số:"/>
+            </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="@dimen/margin_8">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/ic_location"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tv_type_vehical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Loại xe:"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/ic_language"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tv_province"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Tỉnh thành:"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/ic_baseline_scoreboard_24"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tv_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Độ chính xác:"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/baseline_access_time_24"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tv_time_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Thời gian tạo:"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/ic_parking"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tv_time_parking"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Thời gian đã gửi:"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/ic_price"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Giá tiền:"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:src="@drawable/ic_paid"
+                    android:layout_gravity="center_vertical"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:text="Trạng thái thanh toán:"/>
+                <TextView
+                    android:id="@+id/tv_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:textColor="#4CAF50"
+                    android:text="Đã thanh toán"/>
+            </LinearLayout>
             <ImageView
                 android:id="@+id/iv_qr"
                 android:layout_width="@dimen/margin_200"
-                android:layout_height="@dimen/margin_200"/>
-        </RelativeLayout>
-
+                android:layout_height="@dimen/margin_200"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_60"
+                android:layout_gravity="center"/>
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

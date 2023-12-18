@@ -132,9 +132,10 @@ class MainFragment : Fragment(), NavigationBarView.OnItemSelectedListener {
         }
     }
     private val insertData = object : HomeFragmentListener {
-        override fun onInsertSuccess() {
+
+        override fun onInsertSuccess(id_user: String) {
             Log.d("TAG_AA", "Main")
-            libraryFragment?.loadData()
+            libraryFragment?.loadData(id_user)
         }
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -175,6 +176,14 @@ class MainFragment : Fragment(), NavigationBarView.OnItemSelectedListener {
     private val homeListener = object : HomeListener {
         override fun loginListener(isLogin: Boolean) {
             Log.d("TAG_D", "login")
+        }
+
+        override fun scrollUp() {
+            binding?.navigation?.visibility = View.GONE
+        }
+
+        override fun scrollDown() {
+            binding?.navigation?.visibility = View.VISIBLE
         }
     }
 

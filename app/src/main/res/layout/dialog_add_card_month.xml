@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_16"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập biển số"
+            android:fontFamily="@font/svn_avo"/>
+        <EditText
+            android:id="@+id/edt_plate_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:textSize="@dimen/textSize16"
+            android:hint="Nhập biển số" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:text="Chọn thời hạn:"
+        android:fontFamily="@font/svn_avo"/>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginEnd="@dimen/margin_32">
+
+        <RadioButton
+            android:id="@+id/rb_1month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 tháng"
+            android:shadowColor="@color/purpil_1"/>
+
+        <RadioButton
+            android:id="@+id/rb_3month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 tháng" />
+
+        <RadioButton
+            android:id="@+id/rd_6month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 tháng" />
+
+    </RadioGroup>
+
+</LinearLayout>

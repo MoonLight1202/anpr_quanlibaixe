@@ -1,290 +1,379 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragment.main.ChartFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thống kê"
             android:layout_marginTop="@dimen/margin_16"
             android:layout_marginBottom="@dimen/margin_16"
             android:fontFamily="@font/svn_avo_bold"
-            android:textSize="@dimen/margin_20"/>
+            android:text="Thống kê"
+            android:textSize="@dimen/margin_20" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="4">
             <TextView
-                android:layout_weight="1"
+                android:id="@+id/chart_today"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/margin_30"
-                android:text="Hôm nay"
-                android:fontFamily="@font/svn_avo_bold"
+                android:layout_weight="1"
                 android:background="@color/purpil_4"
-                android:gravity="center"/>
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/margin_30"
-                android:text="Tuần này"
-                android:fontFamily="@font/svn_avo_bold"
-                android:gravity="center"/>
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/margin_30"
                 android:fontFamily="@font/svn_avo_bold"
                 android:gravity="center"
-                android:text="Tháng này"/>
+                android:text="Hôm nay" />
+
             <TextView
-                android:layout_weight="1"
+                android:id="@+id/chart_week"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/margin_30"
+                android:layout_weight="1"
                 android:fontFamily="@font/svn_avo_bold"
                 android:gravity="center"
-                android:text="Tuỳ chọn"/>
+                android:text="Tuần này" />
+
+            <TextView
+                android:id="@+id/chart_month"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_30"
+                android:layout_weight="1"
+                android:fontFamily="@font/svn_avo_bold"
+                android:gravity="center"
+                android:text="Tháng này" />
+
+            <TextView
+                android:id="@+id/chart_custom"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_30"
+                android:layout_weight="1"
+                android:fontFamily="@font/svn_avo_bold"
+                android:gravity="center"
+                android:text="Tuỳ chọn" />
         </LinearLayout>
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_20"
-                android:layout_marginStart="@dimen/margin_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginEnd="@dimen/margin_16"
-                android:orientation="horizontal"
-                android:weightSum="7">
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/margin_16"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:gravity="bottom"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:background="@color/purpil_2"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Thứ 2"
-                        android:textSize="@dimen/textSize10"
-                        android:fontFamily="@font/svn_avo"
-                        android:textAlignment="center"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@color/purpil_2" />
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:gravity="bottom"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="90dp"
-                        android:background="@color/purpil_2"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/textSize10"
-                        android:text="Thứ 3"
-                        android:fontFamily="@font/svn_avo"
-                        android:textAlignment="center"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:gravity="bottom"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:background="@color/purpil_2"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/textSize10"
-                        android:text="Thứ 4"
-                        android:fontFamily="@font/svn_avo"
-                        android:textAlignment="center"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:gravity="bottom"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:background="@color/purpil_2"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/textSize10"
-                        android:text="Thứ 5"
-                        android:fontFamily="@font/svn_avo"
-                        android:textAlignment="center"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:gravity="bottom"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:background="@color/purpil_2"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/textSize10"
-                        android:text="Thứ 6"
-                        android:fontFamily="@font/svn_avo"
-                        android:textAlignment="center"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:gravity="bottom"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:background="@color/purpil_2"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/textSize10"
-                        android:text="Thứ 7"
-                        android:fontFamily="@font/svn_avo"
-                        android:textAlignment="center"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:gravity="bottom"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:background="@color/purpil_2"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/textSize10"
-                        android:text="CN"
-                        android:fontFamily="@font/svn_avo"
-                        android:textAlignment="center"/>
-
-                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Thứ 2"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize10" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@color/purpil_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Thứ 3"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/purpil_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Thứ 4"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/purpil_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Thứ 5"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:background="@color/purpil_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Thứ 6"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/purpil_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="Thứ 7"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="@color/purpil_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/svn_avo"
+                    android:text="CN"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize10" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
+            android:fontFamily="@font/svn_avo"
             android:text="Chi tiết"
-            android:textSize="@dimen/margin_20"
-            android:fontFamily="@font/svn_avo"/>
+            android:textSize="@dimen/margin_20" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_20"
-            android:textSize="@dimen/margin_16"
+            android:fontFamily="@font/svn_avo"
             android:text="Số lượt xe máy:"
-            android:fontFamily="@font/svn_avo"/>
+            android:textSize="@dimen/margin_16" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_20"
             android:layout_marginTop="@dimen/margin_16"
-            android:textSize="@dimen/margin_16"
+            android:fontFamily="@font/svn_avo"
             android:text="Số lượt ô tô:"
-            android:fontFamily="@font/svn_avo"/>
+            android:textSize="@dimen/margin_16" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_20"
             android:layout_marginTop="@dimen/margin_16"
-            android:textSize="@dimen/margin_16"
+            android:fontFamily="@font/svn_avo"
             android:text="Doanh thu"
-            android:fontFamily="@font/svn_avo"/>
-        <LinearLayout
+            android:textSize="@dimen/margin_16" />
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="@dimen/margin_100">
+
             <TextView
+                android:id="@+id/tv_price_motobike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_20"
                 android:layout_marginTop="@dimen/margin_16"
-                android:textSize="@dimen/margin_16"
+                android:layout_alignParentStart="true"
                 android:fontFamily="@font/svn_avo"
-                android:text="Giá vé xe máy"/>
+                android:text="Giá vé xe máy"
+                android:textSize="@dimen/margin_16" />
+
             <EditText
+                android:id="@+id/edt_price_motorbike_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:fontFamily="@font/svn_avo"
+                android:hint="Theo giờ"
+                android:layout_toEndOf="@+id/tv_price_motobike"
+                android:inputType="number"
+                android:textSize="@dimen/textSize16" />
+
+            <EditText
+                android:id="@+id/edt_price_motorbike_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8"
                 android:layout_marginTop="@dimen/margin_16"
-                android:textSize="@dimen/textSize16"
                 android:fontFamily="@font/svn_avo"
-                android:hint="Nhập giá vé"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_20"
-                android:textSize="@dimen/margin_16"
-                android:fontFamily="@font/svn_avo"
-                android:text="Giá vé ô tô"/>
+                android:inputType="number"
+                android:hint="Theo ngày"
+                android:layout_toEndOf="@+id/tv_price_motobike"
+                android:layout_below="@+id/edt_price_motorbike_hour"
+                android:textSize="@dimen/textSize16" />
             <EditText
+                android:id="@+id/edt_price_motorbike_month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8"
-                android:textSize="@dimen/textSize16"
+                android:layout_marginTop="@dimen/margin_16"
                 android:fontFamily="@font/svn_avo"
-                android:hint="Nhập giá vé"/>
-        </LinearLayout>
+                android:inputType="number"
+                android:hint="Theo tháng"
+                android:layout_toEndOf="@+id/tv_price_motobike"
+                android:layout_below="@+id/edt_price_motorbike_day"
+                android:textSize="@dimen/textSize16" />
 
+            <TextView
+                android:id="@+id/tv_price_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_below="@+id/edt_price_motorbike_month"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/svn_avo"
+                android:text="Giá vé ô tô"
+                android:textSize="@dimen/margin_16" />
 
+            <EditText
+                android:id="@+id/edt_price_car_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_toEndOf="@id/tv_price_motobike"
+                android:layout_below="@+id/edt_price_motorbike_month"
+                android:fontFamily="@font/svn_avo"
+                android:inputType="number"
+                android:hint="Theo giờ"
+                android:textSize="@dimen/textSize16" />
+
+            <EditText
+                android:id="@+id/edt_price_car_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_toEndOf="@id/tv_price_motobike"
+                android:layout_below="@+id/edt_price_car_hour"
+                android:fontFamily="@font/svn_avo"
+                android:inputType="number"
+                android:hint="Theo ngày"
+                android:textSize="@dimen/textSize16" />
+            <EditText
+                android:id="@+id/edt_price_car_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_toEndOf="@id/tv_price_motobike"
+                android:layout_below="@+id/edt_price_car_day"
+                android:fontFamily="@font/svn_avo"
+                android:inputType="number"
+                android:hint="Theo tháng"
+                android:textSize="@dimen/textSize16" />
+        </RelativeLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
