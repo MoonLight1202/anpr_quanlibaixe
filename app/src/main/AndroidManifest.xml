@@ -20,6 +20,7 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:screenOrientation="portrait"
         android:theme="@style/Base.Theme.CuuToi">
         <activity
             android:name=".view.activity.ScanQRActivity"

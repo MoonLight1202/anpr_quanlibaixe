@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_50"
-            android:text="Xe máy"
+            android:text="@string/motorcycle"
             android:layout_marginStart="@dimen/margin_16"
             android:fontFamily="@font/svn_avo_bold"
             android:gravity="center_vertical"/>
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_50"
             android:layout_marginStart="@dimen/margin_16"
-            android:text="Ô tô"
+            android:text="@string/car"
             android:fontFamily="@font/svn_avo_bold"
             android:gravity="center_vertical"/>
     </LinearLayout>

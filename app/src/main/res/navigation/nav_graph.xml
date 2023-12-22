@@ -25,21 +25,16 @@
         android:label="Main"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_main_fragment_to_result_qr_fragment2"
-            app:destination="@id/result_qr_fragment" />
-        <action
             android:id="@+id/action_main_fragment_to_blankFragment"
             app:destination="@id/blankFragment" />
         <action
             android:id="@+id/action_main_fragment_to_editUserFragment"
             app:destination="@id/editUserFragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_termFragment"
+            app:destination="@id/termFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/result_qr_fragment"
-        android:name="com.example.mongodbrealmcourse.view.fragment.DetailQRFragment"
-        android:label="Main"
-        tools:layout="@layout/fragment_detail_q_r" />
     <fragment
         android:id="@+id/blankFragment"
         android:name="com.example.mongodbrealmcourse.view.fragment.BlankFragment"
@@ -49,5 +44,10 @@
         android:id="@+id/editUserFragment"
         android:name="com.example.mongodbrealmcourse.view.fragment.EditUserFragment"
         android:label="EditUserFragment" />
+    <fragment
+        android:id="@+id/termFragment"
+        android:name="com.example.mongodbrealmcourse.view.fragment.TermFragment"
+        android:label="fragment_term"
+        tools:layout="@layout/fragment_term" />
 
 </navigation>

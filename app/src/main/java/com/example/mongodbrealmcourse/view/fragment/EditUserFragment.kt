@@ -41,7 +41,6 @@ class EditUserFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Realm.init(this.requireContext())
         app = App(AppConfiguration.Builder(Appid).build())
         val user = app.currentUser()
         val queryFilter = Document("email", preferenceHelper.current_account_email )
@@ -65,7 +64,7 @@ class EditUserFragment : BaseFragment() {
                         var addressUser: String? = currentDoc["address"] as? String
 
                         if (nameUser == null) {
-                            binding?.edtUsername?.hint = "Họ tên"
+                            binding?.edtUsername?.hint = getString(R.string.enter_full_name)
                         } else {
                             for (i in 0 until nameUser.length) {
                                 if (dataName == null) {
@@ -78,7 +77,7 @@ class EditUserFragment : BaseFragment() {
                             binding?.edtUsername?.hint = dataName
                         }
                         if (addressUser == null) {
-                            binding?.editAddress?.hint = "Địa chỉ"
+                            binding?.editAddress?.hint = getString(R.string.enter_address)
                         } else {
                             for (i in 0 until addressUser.length) {
                                 if (dataAddress == null) {
@@ -108,9 +107,9 @@ class EditUserFragment : BaseFragment() {
 
                     mongoCollection.updateOne(updateFilter, updateDocument).getAsync { task ->
                         if (task.isSuccess) {
-                            Toast.makeText(requireContext(), "Cập nhật thành công", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), getString(R.string.update_successful), Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(requireContext(), "Cập nhật thất bại", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), getString(R.string.update_failed), Toast.LENGTH_SHORT).show()
                             Log.v("Update Error", task.error.toString())
                         }
                     }

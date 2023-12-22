@@ -11,7 +11,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nhập biển số"
+            android:text="@string/enter_license_plate"
             android:fontFamily="@font/svn_avo"/>
         <EditText
             android:id="@+id/edt_plate_number"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_8"
             android:textSize="@dimen/textSize16"
-            android:hint="Nhập biển số" />
+            android:hint="@string/enter_license_plate" />
     </LinearLayout>
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginEnd="@dimen/margin_16"
-        android:text="Chọn thời hạn:"
+        android:text="@string/select_duration"
         android:fontFamily="@font/svn_avo"/>
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -41,20 +41,20 @@
             android:id="@+id/rb_1month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 tháng"
+            android:text="@string/one_month"
             android:shadowColor="@color/purpil_1"/>
 
         <RadioButton
             android:id="@+id/rb_3month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3 tháng" />
+            android:text="@string/three_months" />
 
         <RadioButton
             android:id="@+id/rd_6month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6 tháng" />
+            android:text="@string/six_months" />
 
     </RadioGroup>
 

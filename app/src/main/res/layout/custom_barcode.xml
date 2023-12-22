@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:background="@color/zxing_transparent"
-            android:text="@string/zxing_msg_default_status"
+            android:text="@string/zxing_text_QR"
             android:textSize="10sp"
             android:textColor="@color/zxing_status_text"/>
     </LinearLayout>

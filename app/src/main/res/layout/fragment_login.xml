@@ -29,7 +29,8 @@
         android:layout_marginTop="@dimen/margin_4"
         android:background="@drawable/border_bg"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_login">
+        app:layout_constraintTop_toBottomOf="@id/iv_login"
+        android:visibility="visible">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -52,7 +53,7 @@
                     android:layout_marginRight="@dimen/margin_28"
                     android:layout_marginBottom="@dimen/margin_4"
                     android:fontFamily="@font/svn_avo_bold"
-                    android:text="Tài khoản"
+                    android:text="@string/account"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/textSize18" />
 
@@ -65,7 +66,7 @@
                     android:drawableStart="@drawable/ic_warning"
                     android:drawablePadding="@dimen/margin_8"
                     android:fontFamily="@font/svn_avo_bold"
-                    android:text="Tài khoản không đúng"
+                    android:text="@string/incorrect_account"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="@dimen/textSize13"
                     android:layout_marginTop="@dimen/margin_8"
@@ -82,7 +83,7 @@
                     android:layout_marginBottom="@dimen/margin_8"
                     app:item_icon="@drawable/ic_email"
                     app:item_icon_red="@drawable/ic_email_red"
-                    app:item_hint="Email"
+                    app:item_hint="@string/email"
                     app:item_asterisk="true"
                     android:inputType="textEmailAddress"/>
 
@@ -96,7 +97,7 @@
                     android:layout_marginBottom="@dimen/margin_8"
                     app:item_icon="@drawable/ic_password"
                     app:item_icon_red="@drawable/ic_password_red"
-                    app:item_hint="Password"
+                    app:item_hint="@string/password"
                     app:item_asterisk="true"
                     android:inputType="textPassword"/>
 
@@ -125,7 +126,7 @@
                         android:layout_toEndOf="@id/cb_policy_login"
                         android:fontFamily="@font/svn_avo_bold"
                         android:layout_marginTop="@dimen/margin_16"
-                        android:text="Lưu tài khoản"
+                        android:text="@string/save_account"
                         android:textAlignment="viewStart"
                         android:textSize="@dimen/textSize16"/>
                 </RelativeLayout>
@@ -161,8 +162,9 @@
             app:layout_constraintWidth_percent="0.75"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btn_google"
+            app:layout_constraintBottom_toTopOf="@id/btn_register_now"
             android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_20"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="@dimen/margin_22">
 
@@ -173,7 +175,7 @@
                 android:fontFamily="@font/svn_avo_bold"
                 android:gravity="center"
                 android:paddingBottom="@dimen/margin_2"
-                android:text="Đăng nhập"
+                android:text="@string/login"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="@dimen/textSize15" />
 
@@ -184,55 +186,55 @@
             android:theme="@style/RedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/btn_google"
-            app:layout_constraintBottom_toBottomOf="@id/btn_google"
+            app:layout_constraintTop_toTopOf="@id/btn_login"
+            app:layout_constraintBottom_toBottomOf="@id/btn_login"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:visibility="gone"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_google"
-            android:layout_width="0dp"
-            android:layout_height="44dp"
-            app:layout_constraintWidth_percent="0.75"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginBottom="@dimen/margin_8"
-            app:cardCornerRadius="@dimen/margin_22"
-            app:layout_constraintBottom_toTopOf="@id/btn_register_now">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/btn_google"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="44dp"-->
+<!--            app:layout_constraintWidth_percent="0.75"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            android:layout_marginBottom="@dimen/margin_8"-->
+<!--            app:cardCornerRadius="@dimen/margin_22"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/btn_register_now">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/border_rd_8dp">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/border_rd_8dp">-->
 
-                <ImageView
-                    android:id="@+id/ic_google"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_google"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/margin_12"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/ic_google"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/ic_google"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginStart="@dimen/margin_12"/>-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/margin_12"
-                    android:layout_marginEnd="@dimen/margin_36"
-                    android:layout_toEndOf="@id/ic_google"
-                    android:fontFamily="@font/svn_avo_bold"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:paddingBottom="@dimen/margin_2"
-                    android:text="Đăng nhập Google"
-                    android:textColor="#E10A0A"
-                    app:autoSizeMaxTextSize="@dimen/textSize15"
-                    app:autoSizeMinTextSize="6sp"
-                    app:autoSizeTextType="uniform" />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginStart="@dimen/margin_12"-->
+<!--                    android:layout_marginEnd="@dimen/margin_36"-->
+<!--                    android:layout_toEndOf="@id/ic_google"-->
+<!--                    android:fontFamily="@font/svn_avo_bold"-->
+<!--                    android:gravity="center"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:paddingBottom="@dimen/margin_2"-->
+<!--                    android:text="@string/google_login"-->
+<!--                    android:textColor="#E10A0A"-->
+<!--                    app:autoSizeMaxTextSize="@dimen/textSize15"-->
+<!--                    app:autoSizeMinTextSize="6sp"-->
+<!--                    app:autoSizeTextType="uniform" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
         <TextView
             android:id="@+id/btn_register_now"
@@ -240,11 +242,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/svn_avo_bold"
             android:gravity="center"
-            android:text="Không có tài khoản?"
+            android:text="@string/no_account"
             android:textColor="@color/colorTextPrimary"
             android:paddingTop="@dimen/margin_10"
             android:paddingBottom="@dimen/margin_10"
-            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_20"
             android:layout_marginLeft="@dimen/margin_24"
             android:layout_marginRight="@dimen/margin_24"
             android:textSize="@dimen/textSize13"
@@ -283,7 +285,7 @@
                     android:layout_marginRight="@dimen/margin_28"
                     android:layout_marginBottom="@dimen/margin_4"
                     android:fontFamily="@font/svn_avo_bold"
-                    android:text="Đăng kí tài khoản"
+                    android:text="@string/register_account"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/textSize18" />
 
@@ -296,7 +298,7 @@
                     android:drawableStart="@drawable/ic_warning"
                     android:drawablePadding="@dimen/margin_8"
                     android:fontFamily="@font/svn_avo_bold"
-                    android:text="Tài khoản không đúng"
+                    android:text="@string/incorrect_account"
                     android:textColor="#F4152F"
                     android:textSize="@dimen/textSize13"
                     android:layout_marginTop="@dimen/margin_8"
@@ -313,7 +315,7 @@
                     android:layout_marginBottom="@dimen/margin_8"
                     app:item_icon="@drawable/ic_user"
                     app:item_icon_red="@drawable/ic_password_red"
-                    app:item_hint="Tên của bạn"
+                    app:item_hint="@string/full_name"
                     app:item_asterisk="true"
                     android:inputType="text"/>
 
@@ -327,7 +329,7 @@
                     android:layout_marginBottom="@dimen/margin_8"
                     app:item_icon="@drawable/ic_email"
                     app:item_icon_red="@drawable/ic_email_red"
-                    app:item_hint="Email"
+                    app:item_hint="@string/email"
                     app:item_asterisk="true"
                     android:inputType="textEmailAddress"/>
 
@@ -341,7 +343,7 @@
                     android:layout_marginBottom="@dimen/margin_8"
                     app:item_icon="@drawable/ic_password"
                     app:item_icon_red="@drawable/ic_password_red"
-                    app:item_hint="Mật khẩu"
+                    app:item_hint="@string/password"
                     app:item_asterisk="true"
                     android:inputType="textPassword"/>
 
@@ -355,7 +357,7 @@
                     android:layout_marginBottom="@dimen/margin_8"
                     app:item_icon="@drawable/ic_password"
                     app:item_icon_red="@drawable/ic_password_red"
-                    app:item_hint="Nhập lại mật khẩu"
+                    app:item_hint="@string/reenter_password"
                     app:item_asterisk="true"
                     android:inputType="textPassword"/>
 
@@ -378,14 +380,14 @@
                     <TextView
                         android:id="@+id/tv_policy_register"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_8"
-                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_height="match_parent"
                         android:layout_toEndOf="@id/cb_policy_register"
+                        android:layout_alignTop="@id/cb_policy_register"
+                        android:layout_alignBottom="@id/cb_policy_register"
+                        android:gravity="center_vertical"
                         android:fontFamily="@font/svn_avo_bold"
-                        android:text="Chấp nhận điều khoản"
+                        android:text="@string/accept_terms"
                         android:textColor="@color/colorTextPrimary"
-                        android:textAlignment="viewStart"
                         android:textSize="@dimen/textSize13"/>
                 </RelativeLayout>
 
@@ -398,7 +400,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginBottom="@dimen/margin_16"
-            android:background="@color/colorPrimary"
+            android:background="@color/purpil_2"
             app:layout_constraintBottom_toTopOf="@id/btn_register" />
 
         <ProgressBar
@@ -410,7 +412,7 @@
             app:layout_constraintBottom_toBottomOf="@id/btn_register"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_register"
@@ -420,7 +422,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginBottom="@dimen/margin_8"
-            app:layout_constraintBottom_toTopOf="@id/btn_google_regis"
+            android:layout_marginTop="@dimen/margin_20"
+            app:layout_constraintBottom_toTopOf="@id/btn_login_now"
             app:cardBackgroundColor="@color/purpil_2"
             app:cardCornerRadius="@dimen/margin_22">
 
@@ -430,7 +433,7 @@
                 android:fontFamily="@font/svn_avo_bold"
                 android:gravity="center"
                 android:paddingBottom="@dimen/margin_2"
-                android:text="Đăng kí"
+                android:text="@string/register"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="@dimen/textSize15" />
 
@@ -441,55 +444,11 @@
             android:theme="@style/RedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/btn_google_regis"
-            app:layout_constraintBottom_toBottomOf="@id/btn_google_regis"
+            app:layout_constraintTop_toTopOf="@id/btn_register"
+            app:layout_constraintBottom_toBottomOf="@id/btn_register"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:visibility="gone"/>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_google_regis"
-            android:layout_width="0dp"
-            android:layout_height="44dp"
-            app:layout_constraintWidth_percent="0.75"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginBottom="@dimen/margin_8"
-            app:layout_constraintBottom_toTopOf="@id/btn_login_now"
-            app:cardCornerRadius="@dimen/margin_22">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/border_rd_8dp">
-
-                <ImageView
-                    android:id="@+id/ic_google_rigis"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_google"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/margin_12"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/margin_12"
-                    android:layout_marginEnd="@dimen/margin_36"
-                    android:layout_toEndOf="@id/ic_google_rigis"
-                    android:fontFamily="@font/svn_avo_bold"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:paddingBottom="@dimen/margin_2"
-                    android:text="Đăng kí Google"
-                    android:textColor="#C80B0B"
-                    app:autoSizeMaxTextSize="@dimen/textSize15"
-                    app:autoSizeMinTextSize="6sp"
-                    app:autoSizeTextType="uniform" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/btn_login_now"
@@ -497,11 +456,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/svn_avo"
             android:gravity="center"
-            android:text="Đã có tài khoản?"
+            android:text="@string/already_have_account"
             android:textColor="@color/colorTextPrimary"
             android:paddingTop="@dimen/margin_10"
             android:paddingBottom="@dimen/margin_10"
-            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_20"
             android:layout_marginLeft="@dimen/margin_24"
             android:layout_marginRight="@dimen/margin_24"
             android:textSize="@dimen/textSize13"

@@ -121,16 +121,16 @@ class LoginFragment : BaseFragment() {
             AnimationHelper.scaleAnimation(it, object : VoidCallback {
                 override fun execute() {
                     if (binding!!.itemNameRegister.getContent() == "" || binding!!.itemNameRegister.getContent() == null) {
-                        binding!!.itemNameRegister.showWarning("Không đúng định dạng")
+                        binding!!.itemNameRegister.showWarning(getString(R.string.incorrect_format))
                     }
                     if (binding!!.itemEmailRegister.getContent() == "" || binding!!.itemEmailRegister.getContent() == null) {
-                        binding!!.itemEmailRegister.showWarning("Không đúng định dạng")
+                        binding!!.itemEmailRegister.showWarning(getString(R.string.incorrect_format))
                     }
                     if (binding!!.itemPasswordRegister.getContent() == "" || binding!!.itemPasswordRegister.getContent() == null) {
-                        binding!!.itemPasswordRegister.showWarning("Không đúng định dạng")
+                        binding!!.itemPasswordRegister.showWarning(getString(R.string.incorrect_format))
                     }
                     if (binding!!.itemPasswordRegister.getContent() != binding!!.itemPasswordSubmitRegister.getContent()) {
-                        binding!!.itemPasswordSubmitRegister.showWarning("Mật khẩu xác nhận không đúng")
+                        binding!!.itemPasswordSubmitRegister.showWarning(getString(R.string.password_confirmation_mismatch))
                     }
                     if (binding!!.itemEmailRegister.getContent() != "" && binding!!.itemPasswordRegister.getContent() != "" && binding!!.itemPasswordRegister.getContent() ==  binding!!.itemPasswordSubmitRegister.getContent() ) {
                         val user = app.currentUser()
@@ -148,7 +148,7 @@ class LoginFragment : BaseFragment() {
                             if (task.isSuccess) {
                                 val results: MongoCursor<Document> = task.get()
                                 if (results.hasNext()) {
-                                    binding!!.itemEmailRegister.showWarning("Tài khoản đã tồn tại")
+                                    binding!!.itemEmailRegister.showWarning(getString(R.string.account_already_exists))
                                 } else {
                                     val document = Document()
                                     document.put("name", binding!!.itemNameRegister.getContent())
@@ -164,7 +164,7 @@ class LoginFragment : BaseFragment() {
                                             Log.v("AddFunction", "Inserted Data")
                                             Toast.makeText(
                                                 this@LoginFragment.requireContext(),
-                                                "Đăng kí tài khoản thành công",
+                                                getString(R.string.registration_success),
                                                 Toast.LENGTH_SHORT,
                                             ).show()
                                             binding!!.itemEmailLogin.setContent(binding!!.itemEmailRegister.getContent())
@@ -174,7 +174,7 @@ class LoginFragment : BaseFragment() {
                                             Log.v("AddFunction", "Error" + task.error.toString())
                                             Toast.makeText(
                                                 this@LoginFragment.requireContext(),
-                                                "Đã xảy ra lỗi\n" + task.error.toString(),
+                                                getString(R.string.error_occurred) + task.error.toString(),
                                                 Toast.LENGTH_SHORT,
                                             ).show()
                                         }
@@ -195,10 +195,10 @@ class LoginFragment : BaseFragment() {
                 override fun execute() {
                     if (binding!!.itemEmailLogin.getContent() != "") {
                         email = binding!!.itemEmailLogin.getContent()
-                    } else binding!!.itemEmailLogin.showWarning("Không đúng định dạng")
+                    } else binding!!.itemEmailLogin.showWarning(getString(R.string.incorrect_format))
                     if (binding!!.itemPasswordLogin.getContent() != "") {
                         password = binding!!.itemPasswordLogin.getContent()
-                    } else binding!!.itemPasswordLogin.showWarning("Không đúng định dạng")
+                    } else binding!!.itemPasswordLogin.showWarning(getString(R.string.incorrect_format))
 
                     if (email != "" && password != "") {
                         val user = app.currentUser()
@@ -219,7 +219,7 @@ class LoginFragment : BaseFragment() {
                             if (task.isSuccess) {
                                 val results: MongoCursor<Document> = task.get()
                                 if (!results.hasNext()) {
-                                    binding!!.itemEmailLogin.showWarning("Tài khoản không tồn tại")
+                                    binding!!.itemEmailLogin.showWarning(getString(R.string.account_not_exists))
                                 }
                                 while (results.hasNext()) {
                                     val currentDoc: Document = results.next()
@@ -252,11 +252,11 @@ class LoginFragment : BaseFragment() {
                                     }
                                     Log.d("TAG_F", dataEmail + dataPassword)
                                     if (dataEmail != binding!!.itemEmailLogin.getContent()) {
-                                        binding!!.itemEmailLogin.showWarning("Tài khoản không đúng")
+                                        binding!!.itemEmailLogin.showWarning(getString(R.string.incorrect_account))
                                     } else {
                                         binding!!.itemEmailLogin.hideWarning()
                                         if (dataPassword != binding!!.itemPasswordLogin.getContent()) {
-                                            binding!!.itemPasswordLogin.showWarning("Mật khẩu không đúng")
+                                            binding!!.itemPasswordLogin.showWarning(getString(R.string.incorrect_password))
                                         } else {
                                             binding!!.itemPasswordLogin.hideWarning()
                                             preferenceHelper.current_account_email =

@@ -18,6 +18,7 @@ class GlobalHelper {
     val price_car_hour = "price_car_hour"
     val price_car_day = "price_car_day"
     val price_car_month = "price_car_month"
+    val currentLanguage = "current_language"
     val state_filter_lib = "state_filter_lib"
 
 

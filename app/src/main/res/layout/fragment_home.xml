@@ -107,7 +107,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="5dp"
                     android:lineSpacingExtra="20dp"
-                    android:text="INFO PLATE"
+                    android:text="@string/plate_info"
                     android:textAlignment="center"
                     android:textSize="28sp"
                     android:textStyle="bold"
@@ -141,7 +141,7 @@
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_16"
             android:fontFamily="@font/svn_avo_bold"
-            android:text="Thông tin phân tích"
+            android:text="@string/analysis_info"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cv_info_container" />
         <FrameLayout
@@ -220,7 +220,7 @@
                     android:layout_marginStart="@dimen/margin_4"
                     android:fontFamily="@font/svn_avo"
                     android:layout_marginTop="@dimen/margin_16"
-                    android:text="Loại xe:"
+                    android:text="@string/vehicle_type"
                     android:textSize="12sp"
                     android:layout_toEndOf="@id/iv_type_vehical" />
                 <TextView
@@ -230,7 +230,7 @@
                     android:layout_marginStart="@dimen/margin_4"
                     android:layout_marginTop="@dimen/margin_15"
                     android:fontFamily="@font/svn_avo"
-                    android:text="Thời gian:"
+                    android:text="@string/entry_time"
                     android:textSize="12sp"
                     android:layout_below="@+id/tv_type_vehical"
                     android:layout_toEndOf="@id/iv_time_create" />
@@ -242,7 +242,7 @@
                     android:layout_marginStart="@dimen/margin_4"
                     android:layout_marginTop="@dimen/margin_15"
                     android:fontFamily="@font/svn_avo"
-                    android:text="Độ chính xác:"
+                    android:text="@string/accuracy"
                     android:textSize="12sp"
                     android:layout_below="@+id/tv_time_create"
                     android:layout_toEndOf="@+id/iv_score_icon" />
@@ -254,7 +254,7 @@
                     android:layout_marginStart="@dimen/margin_4"
                     android:layout_marginTop="@dimen/margin_15"
                     android:fontFamily="@font/svn_avo"
-                    android:text="Tỉnh thành:"
+                    android:text="@string/province"
                     android:textSize="12sp"
                     android:layout_toEndOf="@id/iv_location"
                     android:layout_below="@id/tv_vehicle_score"/>
@@ -279,7 +279,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_4"
                         android:fontFamily="@font/svn_avo"
-                        android:text="Loại vé:"
+                        android:text="@string/ticket_type"
                         android:layout_gravity="center_vertical"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -305,7 +305,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_4"
                         android:fontFamily="@font/svn_avo"
-                        android:text="Ngày hết hạn:"
+                        android:text="@string/expiry_date"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -326,7 +326,7 @@
                     android:layout_marginBottom="@dimen/margin_50"
                     android:fontFamily="@font/svn_avo_bold"
                     android:textColor="#D81B37"
-                    android:text="Khách gửi xe chụp lại QR vé xe"
+                    android:text="@string/user_captures_qr"
                     android:layout_below="@id/img_rssult_crop"
                     android:textAlignment="center"/>
 

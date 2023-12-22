@@ -74,5 +74,15 @@
         android:layout_below="@+id/toolbar"
         tools:listitem="@layout/plate_item_recycler_view"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <TextView
+        android:id="@+id/tv_no_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_elements"
+        android:fontFamily="@font/svn_avo_bold"
+        android:layout_marginTop="@dimen/margin_100"
+        android:textSize="@dimen/margin_16"
+        android:gravity="center_horizontal"
+        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

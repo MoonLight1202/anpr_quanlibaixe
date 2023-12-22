@@ -76,7 +76,7 @@ class LibraryFragment : BaseFragment() {
         mongoDatabase = mongoClient.getDatabase("number-plates-data")
         val mongoCollection = mongoDatabase.getCollection("infoPlate")
         val query = Document("id_user",id_user)
-        val findAllTask = mongoCollection.find(query).sort(Document("time_create", -1)).iterator()
+        val findAllTask = mongoCollection.find(query).iterator()
         val plateNumberList = mutableListOf<PlateNumberObject>()
 
         findAllTask.getAsync { task ->
@@ -85,7 +85,7 @@ class LibraryFragment : BaseFragment() {
                 if (!results.hasNext()) {
                     Toast.makeText(
                         this@LibraryFragment.requireContext(),
-                        "Không có phần tử nào",
+                        getString(R.string.no_elements),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -123,9 +123,11 @@ class LibraryFragment : BaseFragment() {
                         id.toString() + "***" + info_plate + "***" + region + "***" + type_car + "***" + accuracy + "***" + time_create
                     )
                 }
+                plateNumberList.reverse()
                 adapter.submitList(plateNumberList)
                 adapter.notifyDataSetChanged()
-            } else {
+                if(plateNumberList.size == 0) binding?.tvNoResult?.visibility = View.VISIBLE else binding?.tvNoResult?.visibility = View.GONE
+       } else {
                 Log.v("Task Error", task.error.toString())
             }
         }
@@ -140,7 +142,7 @@ class LibraryFragment : BaseFragment() {
         mongoDatabase = mongoClient.getDatabase("number-plates-data")
         val mongoCollection = mongoDatabase.getCollection("infoPlate")
         val query = Document("id_user",id_user).append("info_plate", querySearch)
-        val findAllTask = mongoCollection.find(query).sort(Document("time_create", -1)).iterator()
+        val findAllTask = mongoCollection.find(query).iterator()
         val plateNumberList = mutableListOf<PlateNumberObject>()
 
         findAllTask.getAsync { task ->
@@ -149,7 +151,7 @@ class LibraryFragment : BaseFragment() {
                 if (!results.hasNext()) {
                     Toast.makeText(
                         this@LibraryFragment.requireContext(),
-                        "Không có phần tử nào",
+                        getString(R.string.no_elements),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -187,8 +189,11 @@ class LibraryFragment : BaseFragment() {
                         id.toString() + "***" + info_plate + "***" + region + "***" + type_car + "***" + accuracy + "***" + time_create
                     )
                 }
+                plateNumberList.reverse()
                 adapter.submitList(plateNumberList)
                 adapter.notifyDataSetChanged()
+                if(plateNumberList.size == 0) binding?.tvNoResult?.visibility = View.VISIBLE else binding?.tvNoResult?.visibility = View.GONE
+
             } else {
                 Log.v("Task Error", task.error.toString())
             }
@@ -204,7 +209,7 @@ class LibraryFragment : BaseFragment() {
         mongoDatabase = mongoClient.getDatabase("number-plates-data")
         val mongoCollection = mongoDatabase.getCollection("infoPlate")
         val query = Document("id_user",id_user).append("pay", queryFilter)
-        val findAllTask = mongoCollection.find(query).sort(Document("time_create", -1)).iterator()
+        val findAllTask = mongoCollection.find(query).iterator()
         val plateNumberList = mutableListOf<PlateNumberObject>()
 
         findAllTask.getAsync { task ->
@@ -213,7 +218,7 @@ class LibraryFragment : BaseFragment() {
                 if (!results.hasNext()) {
                     Toast.makeText(
                         this@LibraryFragment.requireContext(),
-                        "Không có phần tử nào",
+                        getString(R.string.no_elements),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -251,8 +256,10 @@ class LibraryFragment : BaseFragment() {
                         id.toString() + "***" + info_plate + "***" + region + "***" + type_car + "***" + accuracy + "***" + time_create
                     )
                 }
+                plateNumberList.reverse()
                 adapter.submitList(plateNumberList)
                 adapter.notifyDataSetChanged()
+                if(plateNumberList.size == 0) binding?.tvNoResult?.visibility = View.VISIBLE else binding?.tvNoResult?.visibility = View.GONE
             } else {
                 Log.v("Task Error", task.error.toString())
             }
@@ -292,7 +299,7 @@ class LibraryFragment : BaseFragment() {
 
                         val dialogBuilder = AlertDialog.Builder(requireContext())
                             .setView(dialogView)
-                            .setTitle("Chọn thời gian")
+                            .setTitle(getString(R.string.select_time))
                         dialogBuilder.setPositiveButton("OK") { dialog, which ->
                             val selectedRadioButtonId = radioGroup.checkedRadioButtonId
                             val selectedRadioButton = dialogView.findViewById<RadioButton>(selectedRadioButtonId)
@@ -354,7 +361,7 @@ class LibraryFragment : BaseFragment() {
                                                     price = monthRegister * preferenceHelper.price_motorbike_month
                                                 }
                                                 if(price == 0){
-                                                    Toast.makeText(this@LibraryFragment.requireContext(), "Bạn cần đặt giá vé trong mục thống kê", Toast.LENGTH_SHORT).show()
+                                                    Toast.makeText(this@LibraryFragment.requireContext(), getString(R.string.set_ticket_price_in_statistics), Toast.LENGTH_SHORT).show()
                                                     break
                                                 }
                                                 Log.d("TAG_YY",expirationDate+plateNumber+idUser+price )
@@ -363,15 +370,15 @@ class LibraryFragment : BaseFragment() {
                                                     val updateDocument = Document("\$set", Document("expiration_date", timeExpire).append("pay", "true").append("cost",price ))
                                                     mongoCollection.updateOne(updateFilter, updateDocument).getAsync { task ->
                                                         if (task.isSuccess) {
-                                                            Toast.makeText(requireContext(), "Cập nhật thành công", Toast.LENGTH_SHORT).show()
+                                                            Toast.makeText(requireContext(), getString(R.string.update_successful), Toast.LENGTH_SHORT).show()
                                                             loadData(preferenceHelper.current_account_email)
                                                         } else {
-                                                            Toast.makeText(requireContext(), "Cập nhật thất bại", Toast.LENGTH_SHORT).show()
+                                                            Toast.makeText(requireContext(), getString(R.string.update_failed), Toast.LENGTH_SHORT).show()
                                                             Log.v("Update Error", task.error.toString())
                                                         }
                                                     }
                                                 } else if(plateNumber != null && expirationDate != ""){
-                                                    Toast.makeText(requireContext(), "Vé xe biển số vừa nhập vẫn còn thời hạn", Toast.LENGTH_SHORT).show()
+                                                    Toast.makeText(requireContext(), getString(R.string.ticket_still_valid), Toast.LENGTH_SHORT).show()
 
                                                 }
                                             }
@@ -383,7 +390,7 @@ class LibraryFragment : BaseFragment() {
                             }
                         }
 
-                        dialogBuilder.setNegativeButton("Cancel") { dialog, which ->
+                        dialogBuilder.setNegativeButton(getString(R.string.cancel)) { dialog, which ->
                             dialog.dismiss()
                         }
 
@@ -399,7 +406,7 @@ class LibraryFragment : BaseFragment() {
                         intentIntegrator.captureActivity = ScanQRActivity::class.java
                         intentIntegrator.setBeepEnabled(true)
                         intentIntegrator.setCameraId(0)
-                        intentIntegrator.setPrompt("SCAN")
+                        intentIntegrator.setPrompt(getString(R.string.zxing_text_QR))
                         intentIntegrator.setBarcodeImageEnabled(false)
                         intentIntegrator.setOrientationLocked(true)
                         intentIntegrator.initiateScan()
@@ -454,7 +461,7 @@ class LibraryFragment : BaseFragment() {
 
                 val dialogBuilder = AlertDialog.Builder(requireContext())
                     .setView(dialogView)
-                    .setTitle("Lựa chọn hiển thị danh sách biển số")
+                    .setTitle(getString(R.string.select_display_license_plate))
                     .setPositiveButton("OK") { dialog, _ ->
                         // Xử lý sự kiện khi người dùng nhấn nút OK
 
@@ -475,7 +482,7 @@ class LibraryFragment : BaseFragment() {
 
                         dialog.dismiss()
                     }
-                    .setNegativeButton("Cancel") { dialog, _ ->
+                    .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
                         dialog.dismiss()
                     }
 

@@ -25,8 +25,6 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.mongodbrealmcourse.viewmodel.listener.HomeListener
 import com.example.mongodbrealmcourse.viewmodel.utils.getFileFromUri
@@ -38,7 +36,6 @@ import com.example.mongodbrealmcourse.view.fragment.BaseFragment
 import com.example.mongodbrealmcourse.viewmodel.callback.VoidCallback
 import com.example.mongodbrealmcourse.viewmodel.listener.HomeFragmentListener
 import com.example.mongodbrealmcourse.viewmodel.utils.AnimationHelper
-import com.example.mongodbrealmcourse.viewmodel.utils.PreferenceHelper
 import com.example.mongodbrealmcourse.viewmodel.utils.ProvinceCodeMapper
 import com.google.firebase.storage.FirebaseStorage
 import com.google.zxing.BarcodeFormat
@@ -49,8 +46,6 @@ import id.zelory.compressor.Compressor
 import io.realm.Realm
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
-import io.realm.mongodb.mongo.MongoClient
-import io.realm.mongodb.mongo.MongoDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -162,7 +157,7 @@ class HomeFragment : BaseFragment() {
 
         val permissionlistener: PermissionListener = object : PermissionListener {
             override fun onPermissionGranted() {
-                Toast.makeText(requireActivity(), "Permission Granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), getString(R.string.permission_granted), Toast.LENGTH_SHORT).show()
                 startCamera()
                 initListeners()
             }
@@ -170,14 +165,14 @@ class HomeFragment : BaseFragment() {
             override fun onPermissionDenied(deniedPermissions: List<String>) {
                 Toast.makeText(
                     requireActivity(),
-                    "Permission Denied\n$deniedPermissions",
+                    getString(R.string.permission_denied)+"\n$deniedPermissions",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         }
         TedPermission.create()
             .setPermissionListener(permissionlistener)
-            .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+            .setDeniedMessage(getString(R.string.permission_denied_message))
             .setPermissions(
                 Manifest.permission.CAMERA,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -198,7 +193,7 @@ class HomeFragment : BaseFragment() {
                             .inflate(R.layout.dialog_choose_type_vehical, null)
                         val dialogBuilder = AlertDialog.Builder(requireContext())
                             .setView(dialogView)
-                            .setTitle("Lựa chọn loại phương tiện")
+                            .setTitle(getString(R.string.select_vehicle_type))
                         val dialog = dialogBuilder.create()
                         dialog.show()
                         dialogView.findViewById<LinearLayout>(R.id.layout_motorbike)
@@ -315,7 +310,7 @@ class HomeFragment : BaseFragment() {
                     Log.d(ContentValues.TAG, "Ảnh chụp thành công: ${output.savedUri}")
                     Toast.makeText(
                         requireContext(),
-                        "Chụp ảnh thành công: ${output.savedUri}",
+                        getString(R.string.capture_successful)+" ${output.savedUri}",
                         Toast.LENGTH_SHORT
                     ).show()
                     uploadImageToServerAndGetResults(output.savedUri, typeVehical)
@@ -444,7 +439,7 @@ class HomeFragment : BaseFragment() {
                                             var pay: String? =
                                                 currentDoc["pay"] as? String ?: "false"
                                             time = currentDoc["time_create"] as? String ?: ""
-                                            binding?.tvTimeCreate?.text = "Thời gian: " + time
+                                            binding?.tvTimeCreate?.text = getString(R.string.entry_time) +" "+time
                                             if (expirationDate != "") {
                                                 binding!!.ivQRVeXe.visibility = View.GONE
                                                 // Calculate time difference
@@ -469,8 +464,8 @@ class HomeFragment : BaseFragment() {
                                                         // Save image to firebase
                                                         binding!!.layoutExpireDate.visibility = View.GONE
                                                         binding!!.ivQRVeXe.visibility = View.VISIBLE
-                                                        binding!!.tvResultQr.text = "Khách gửi xe chụp lại QR vé xe"
-                                                        binding!!.tvTypeCard.text = "Loại vé: Vé lượt"
+                                                        binding!!.tvResultQr.text = getString(R.string.user_captures_qr)
+                                                        binding!!.tvTypeCard.text = getString(R.string.ticket_type_day)
 
                                                         val storageReference = FirebaseStorage.getInstance().getReference("uploads")
                                                         val imageFileName = "${System.currentTimeMillis()}.${getFileExtension(savedUri)}"
@@ -564,9 +559,9 @@ class HomeFragment : BaseFragment() {
                                                     } else {
                                                         // expirationDate còn hạn
                                                         binding!!.layoutExpireDate.visibility = View.VISIBLE
-                                                        binding!!.tvTypeCard.text = "Loại vé: Vé tháng"
-                                                        binding!!.tvExpireDate.text = "Thời hạn: "+expirationDate
-                                                        binding!!.tvResultQr.text = "Không cần quét biển số xe\nVui lòng quét QR vé tháng"
+                                                        binding!!.tvTypeCard.text = getString(R.string.ticket_type_month)
+                                                        binding!!.tvExpireDate.text = getString(R.string.duration)+expirationDate
+                                                        binding!!.tvResultQr.text = getString(R.string.no_need_to_scan_plate)
                                                         binding!!.ivQRVeXe.visibility = View.GONE
                                                         val targetDate =
                                                             LocalDate.parse(
@@ -591,10 +586,10 @@ class HomeFragment : BaseFragment() {
                                                 }
                                             } else {
                                                 binding!!.layoutExpireDate.visibility = View.GONE
-                                                binding!!.tvTypeCard.text = "Loại vé: Vé lượt"
+                                                binding!!.tvTypeCard.text = getString(R.string.ticket_type_day)
                                                 if (pay == "false") {
                                                     binding!!.ivQRVeXe.visibility = View.GONE
-                                                    binding!!.tvResultQr.text = "Vui lòng thanh toán lượt gửi trước\n trước khi tạo vé xe lần nữa"
+                                                    binding!!.tvResultQr.text = getString(R.string.pay_before_creating_ticket)
                                                     binding!!.scrollView.post {
                                                         binding!!.scrollView.fullScroll(
                                                             View.FOCUS_DOWN
@@ -603,7 +598,7 @@ class HomeFragment : BaseFragment() {
                                                 } else {
                                                     // Save image to firebase
                                                     binding!!.ivQRVeXe.visibility = View.VISIBLE
-                                                    binding!!.tvResultQr.text = "Khách gửi xe chụp lại QR vé xe"
+                                                    binding!!.tvResultQr.text = getString(R.string.user_captures_qr)
 
                                                     val storageReference = FirebaseStorage.getInstance().getReference("uploads")
                                                     val imageFileName = "${System.currentTimeMillis()}.${getFileExtension(savedUri)}"
@@ -734,9 +729,9 @@ class HomeFragment : BaseFragment() {
                                             // Save image to firebase
                                             Log.v("TAG_Y", "chưa từng lưu" + currentDoc.toString())
                                             binding!!.ivQRVeXe.visibility = View.VISIBLE
-                                            binding!!.tvResultQr.text = "Khách gửi xe chụp lại QR vé xe"
+                                            binding!!.tvResultQr.text = getString(R.string.user_captures_qr)
                                             binding!!.layoutExpireDate.visibility = View.GONE
-                                            binding!!.tvTypeCard.text = "Loại vé: Vé lượt"
+                                            binding!!.tvTypeCard.text = getString(R.string.ticket_type_day)
                                             val storageReference = FirebaseStorage.getInstance()
                                                 .getReference("uploads")
                                             val imageFileName = "${System.currentTimeMillis()}.${
@@ -854,13 +849,13 @@ class HomeFragment : BaseFragment() {
                     } else {
                         withContext(Dispatchers.Main) {
                             binding?.apply {
-                                tvNumberplate.text = "Biển số"
+                                tvNumberplate.text = getString(R.string.license_plate)
                                 tvCountryPrefix.text = ""
-                                tvTypeVehical.text = "Loại xe:"
-                                tvTimeCreate.text = "Thời gian: "
-                                tvVehicleScore.text = "Độ chính xác: "
-                                tvLocation.text = "Tỉnh thành: "
-                                tvResultQr.text = "Không phát hiện biển số trong ảnh"
+                                tvTypeVehical.text = getString(R.string.vehicle_type)
+                                tvTimeCreate.text = getString(R.string.entry_time)
+                                tvVehicleScore.text = getString(R.string.accuracy)
+                                tvLocation.text = getString(R.string.province)
+                                tvResultQr.text = getString(R.string.no_plate_detected_in_image)
                                 progressBar.visibility = View.GONE
                                 scrollView.post {
                                     scrollView.fullScroll(View.FOCUS_DOWN)
@@ -911,22 +906,26 @@ class HomeFragment : BaseFragment() {
         binding?.apply {
             tvNumberplate.text = vrn
             tvCountryPrefix.text = country_code
-            if (typeVehical == "car") tvTypeVehical.text = "Loại xe: Ô tô" else tvTypeVehical.text =
-                "Loại xe: Xe máy"
-            tvTimeCreate.text = "Thời gian: " + time
-            tvVehicleScore.text = "Độ chính xác: " + scoree + "%"
+            if (typeVehical == "car") tvTypeVehical.text = getString(R.string.vehicle_type)+getString(R.string.car) else tvTypeVehical.text =
+                getString(R.string.vehicle_type)+" "+getString(R.string.motorcycle)
+            tvTimeCreate.text = getString(R.string.entry_time) +" "+time
+            tvVehicleScore.text = getString(R.string.accuracy) +" "+scoree + "%"
             val mapper = ProvinceCodeMapper()
-            val extractedCode =
-                extractNumberBeforeLetter(vrn).substring(0, 2) // Lấy mã tỉnh thành từ chuỗi đầu vào
-            val provinceName = mapper.getProvinceNameFromCode(extractedCode)
-            tvLocation.text = "Tỉnh thành: " + provinceName
+            try {
+                val extractedCode =
+                    extractNumberBeforeLetter(vrn).substring(0, 2) // Lấy mã tỉnh thành từ chuỗi đầu vào
+                val provinceName = mapper.getProvinceNameFromCode(extractedCode)
+                tvLocation.text = getString(R.string.province) +" "+provinceName
+            } catch (e: java.lang.Exception){
+                tvLocation.text = getString(R.string.province) +" Không xác định"
+            }
         }
 
     }
 
     fun drawRectangleOnImage(image: Mat, left: Int, top: Int, right: Int, bottom: Int) {
         val rect = org.opencv.core.Rect(left, top, right - left, bottom - top)
-        Imgproc.rectangle(image, rect, Scalar(255.0, 0.0, 0.0), 2)
+        Imgproc.rectangle(image, rect, Scalar(0.0, 255.0, 255.0), 8)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

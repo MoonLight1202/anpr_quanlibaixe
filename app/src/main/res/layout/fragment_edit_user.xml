@@ -26,11 +26,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:text="Chỉnh sửa hồ sơ"
+            android:text="@string/edit_profile"
             android:fontFamily="@font/svn_avo_bold" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/img_photoUser"
+            android:id="@+id/cv_photoUser"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_below="@+id/edit_profile"
@@ -41,26 +41,11 @@
             android:scaleType="centerCrop"
             app:cardCornerRadius="@dimen/margin_50">
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/edit_profile"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="158dp"
-            android:layout_marginTop="67dp"
-            android:scaleType="centerCrop"
-            app:cardCornerRadius="@dimen/margin_20">
-            <ImageView
+                android:id="@+id/iv_photoUser"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/margin_3"
                 android:src="@drawable/ic_user"/>
         </androidx.cardview.widget.CardView>
-
 
     </RelativeLayout>
 
@@ -74,13 +59,13 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginLeft="28dp"
-            android:text="Họ tên"
+            android:text="@string/full_name"
             android:textSize="15sp"
             android:fontFamily="@font/svn_avo"/>
         <EditText
             android:id="@+id/edt_username"
             android:layout_marginTop="14dp"
-            android:hint="Họ tên"
+            android:hint="@string/enter_full_name"
             android:textSize="15sp"
             android:paddingStart="@dimen/margin_8"
             android:inputType="textPersonName"
@@ -96,14 +81,14 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginLeft="28dp"
-            android:text="Địa chỉ"
+            android:text="@string/address"
             android:textSize="15sp"
             android:fontFamily="@font/svn_avo"/>
         <EditText
             android:id="@+id/edit_address"
             android:layout_marginTop="14dp"
             android:paddingStart="@dimen/margin_8"
-            android:hint="Đia chỉ"
+            android:hint="@string/enter_address"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:maxLines="3"
@@ -121,7 +106,7 @@
             android:layout_height="20dp"
             android:textSize="15sp"
             android:layout_marginLeft="28dp"
-            android:text="Đổi mật khẩu"
+            android:text="@string/change_password"
             android:layout_gravity="right"
             android:fontFamily="@font/svn_avo"/>
 
@@ -133,7 +118,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_round_purpil_4"
-        android:text="Cập nhật"
+        android:text="@string/update"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:fontFamily="@font/svn_avo_bold" />

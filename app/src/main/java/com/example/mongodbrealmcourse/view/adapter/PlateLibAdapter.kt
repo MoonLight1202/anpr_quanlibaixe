@@ -26,7 +26,7 @@ class PlateLibAdapter : ListAdapter<PlateNumberObject, PlateLibAdapter.MyViewHol
                 binding.ivPlateRcv.setImageDrawable(ContextCompat.getDrawable(binding.root.context, R.drawable.bienso))
             }
             binding.tvPlateRcv.text = item.infoPlate.uppercase()
-            binding.tvTimeCreateRcv.text = "Thời gian: "+item.dateCreate
+            binding.tvTimeCreateRcv.text = binding.root.context.getString(R.string.entry_time)+" "+item.dateCreate
             binding.root.setOnClickListener {
                 AnimationHelper.scaleAnimation(it, object : VoidCallback {
                     override fun execute() {

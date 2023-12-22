@@ -1,18 +1,135 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
     <string name="app_name">Plate Number</string>
-
+    <string name="app_desc">License Plate Recognition App</string>
+    <string name="zxing_text_QR">Place the QR code inside the viewfinder to scan</string>
     <string name="menu_group">Settings</string>
-    <string name="menu_anpr" translatable="false">Anpr</string>
     <string name="menu_activity">Activity</string>
     <string name="instructions">Take an image of a vehicles plate to see results</string>
+    <string name="error_message">An error occurred. \n Unable to display license plate information!</string>
 
-    // Menu Buttons
-    <string name="openurl_btn" translatable="false">API Docs</string>
-    <string name="exit_btn">Exit</string>
+    <string name="enter_license_plate">Enter license plate</string>
+    <string name="select_duration">Select duration: </string>
+    <string name="one_month">1 month</string>
+    <string name="three_months">3 months</string>
+    <string name="six_months">6 months</string>
+    <string name="motorcycle">Motorcycle</string>
+    <string name="car">Car</string>
+    <string name="all">All</string>
+    <string name="paid">Paid</string>
+    <string name="unpaid">Unpaid</string>
+    <string name="back">Back</string>
+    <string name="license_plate_info">License plate information</string>
+    <string name="license_plate">License plate: </string>
+    <string name="vehicle_type">Vehicle type:  </string>
+    <string name="province">Province: </string>
+    <string name="accuracy">Recognition accuracy: </string>
+    <string name="entry_time">Entry time: </string>
+    <string name="monthly_ticket_until">Monthly ticket valid until: </string>
+    <string name="ticket_price">Ticket price: </string>
+    <string name="payment_status">Payment status: </string>
+    <string name="time_sent">Time sent: </string>
+    <string name="day">day</string>
+    <string name="add_monthly_ticket">Add monthly ticket</string>
+    <string name="select_license_plate">Select license plate display: </string>
+    <string name="cancel">Cancel</string>
+    <string name="capture_vehicle_plate">Capture vehicle plate for identification</string>
+    <string name="plate_info">Plate information</string>
+    <string name="analysis_info">Analysis information</string>
+    <string name="user_captures_qr">User captures QR code on the vehicle ticket</string>
+    <string name="pay_before_creating_ticket">Please pay the previous parking fee before creating a new ticket</string>
+    <string name="today">Today</string>
+    <string name="this_week">This week</string>
+    <string name="this_month">This month</string>
+    <string name="options">Options</string>
+    <string name="details">Details</string>
+    <string name="motorcycle_count">Number of motorcycles: </string>
+    <string name="paid_count">Paid: </string>
+    <string name="car_count">Number of cars: </string>
+    <string name="motorcycle_revenue">Motorcycle revenue: </string>
+    <string name="car_revenue">Car revenue: </string>
+    <string name="total_revenue">Total revenue: </string>
+    <string name="set_ticket_price">Set ticket price: </string>
+    <string name="motorcycle_price">Motorcycle ticket price: </string>
+    <string name="per_hour">Per hour</string>
+    <string name="per_day">Per day</string>
+    <string name="per_month">Per month</string>
+    <string name="car_price">Car ticket price: </string>
+    <string name="profile">Profile</string>
+    <string name="username">Username</string>
+    <string name="email_default">abcxyz@gmail.com</string>
+    <string name="address">Address: </string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="full_name">Full name</string>
+    <string name="enter_full_name">Enter full name</string>
+    <string name="enter_address">Enter address</string>
+    <string name="change_password">Change password</string>
+    <string name="update">Update</string>
+    <string name="update_successful">Update successful</string>
+    <string name="update_failed">Update failed</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="language">Language</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="english">English</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="help_improve_app">Help us improve the app</string>
+    <string name="rate_app">Rate the app</string>
+    <string name="app_terms">App Terms and Conditions</string>
+    <string name="any_issues_or_suggestions">Any issues or suggestions?</string>
+    <string name="rate_five_stars">Rating 5 stars helps us to improve the app</string>
+    <string name="version">Version 1.0.0</string>
+    <string name="capture_successful">Capture successful</string>
+    <string name="no_plate_detected_in_image">No plate detected in the image</string>
+    <string name="add_successful">Add successful</string>
+    <string name="add_failed">Add failed</string>
+    <string name="no_ticket_price_set">No ticket price set</string>
+    <string name="statistics">Statistics</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="account">Account</string>
+    <string name="incorrect_format">Incorrect format</string>
+    <string name="password">Password</string>
+    <string name="incorrect_account">Incorrect account</string>
+    <string name="incorrect_password">Incorrect password</string>
+    <string name="save_account">Save account</string>
+    <string name="google_login">Google login</string>
+    <string name="no_account">No account?</string>
+    <string name="register_account">Register account</string>
+    <string name="your_name">Your name</string>
+    <string name="email">Email</string>
+    <string name="reenter_password">Re-enter password</string>
+    <string name="accept_terms">Accept terms</string>
+    <string name="register_google">Register with Google</string>
+    <string name="already_have_account">Already have an account</string>
+    <string name="ticket_type">Ticket Type: </string>
+    <string name="expiry_date">Expiration Date: </string>
+    <string name="creation_date">Creation Date:  Thursday, November 16, 18:33:30 GMT+07:00 2023</string>
+    <string name="flash_enabled">Flash on</string>
+    <string name="flash_disabled">Flash off</string>
+    <string name="connection_error">Unable to connect to the server</string>
+    <string name="no_elements">No elements found</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="permission_denied_message">If you reject permission, you cannot use this service.\nPlease turn on permissions at [Settings] > [Permissions]</string>
+    <string name="select_vehicle_type">Choose Vehicle Type</string>
+    <string name="ticket_type_day">Ticket Type: Single Ticket</string>
+    <string name="ticket_type_month">Ticket Type: Monthly Ticket</string>
+    <string name="duration">Duration: </string>
+    <string name="no_need_to_scan_plate">No need to scan license plate\nPlease scan the monthly ticket QR code</string>
+    <string name="select_time">Select Time</string>
+    <string name="set_ticket_price_in_statistics">You need to set the ticket price in the statistics section</string>
+    <string name="ticket_still_valid">The ticket for the entered license plate is still valid</string>
+    <string name="select_display_license_plate">Select Display License Plate List</string>
+    <string name="address_defaul">Address:  Unknown</string>
+    <string name="monthly_ticket_sent_until">Monthly ticket sent until: </string>
+    <string name="hour">hour</string>
+    <string name="password_confirmation_mismatch">Password confirmation does not match</string>
+    <string name="account_already_exists">Account already exists</string>
+    <string name="registration_success">Registration Successful</string>
+    <string name="error_occurred">An error occurred\n</string>
+    <string name="account_not_exists">Account does not exist</string>
+    <string name="confirm_logout">Are you sure you want to log out?</string>
+    <string name="logout">Log Out</string>
+    <string name="pay_success">Payment successful</string>
+    <string name="pay_failed">Payment failed</string>
 
-    // Developer Details
-    <string name="app_details" translatable="false">Android API Example v1.0</string>
-    <string name="copyright" translatable="false">Created by Keith Baker in collaboration with Plate Recognizer</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>

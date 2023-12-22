@@ -37,7 +37,7 @@
                     <TextView
                         android:layout_width="@dimen/margin_50"
                         android:layout_height="wrap_content"
-                        android:text="Trở về"
+                        android:text="@string/back"
                         android:textColor="@color/colorTextPrimary"/>
                 </LinearLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/svn_avo_bold"
-                android:text="Đã xảy ra lỗi \n Không thể hiển thị thông tin biển số!"
+                android:text="@string/error_message"
                 android:textAlignment="center"/>
         </LinearLayout>
         <LinearLayout
@@ -74,7 +74,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Thông tin biển số"
+                android:text="@string/license_plate_info"
                 android:fontFamily="@font/svn_avo_bold"
                 android:textAlignment="center"/>
             <LinearLayout
@@ -95,7 +95,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Biển số:"/>
+                    android:text="@string/license_plate"/>
             </LinearLayout>
 
             <LinearLayout
@@ -116,7 +116,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Loại xe:"/>
+                    android:text="@string/vehicle_type"/>
             </LinearLayout>
 
             <LinearLayout
@@ -137,7 +137,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Tỉnh thành:"/>
+                    android:text="@string/province"/>
             </LinearLayout>
 
             <LinearLayout
@@ -158,7 +158,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Độ chính xác:"/>
+                    android:text="@string/accuracy"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -178,7 +178,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Thời gian tạo:"/>
+                    android:text="@string/entry_time"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -198,7 +198,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Thời gian đã gửi:"/>
+                    android:text="@string/time_sent"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -218,7 +218,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Giá tiền:"/>
+                    android:text="@string/ticket_price"/>
             </LinearLayout>
 
             <LinearLayout
@@ -238,15 +238,14 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:text="Trạng thái thanh toán:"/>
+                    android:text="@string/payment_status"/>
                 <TextView
                     android:id="@+id/tv_pay"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:textColor="#4CAF50"
-                    android:text="Đã thanh toán"/>
+                    android:textColor="#4CAF50" />
             </LinearLayout>
             <ImageView
                 android:id="@+id/iv_qr"

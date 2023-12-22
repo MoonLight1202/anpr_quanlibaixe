@@ -23,6 +23,8 @@
                 android:layout_height="@dimen/margin_30"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="@dimen/margin_16"
+                android:layout_alignTop="@id/sc_darkmode"
+                android:layout_alignBottom="@id/sc_darkmode"
                 android:src="@drawable/baseline_dark_mode_24"/>
             <TextView
                 android:id="@+id/tv_darkmode"
@@ -33,8 +35,9 @@
                 android:layout_alignTop="@id/iv_darkmode"
                 android:layout_alignBottom="@id/iv_darkmode"
                 android:gravity="center_vertical"
-                android:text="Chế độ tối"/>
+                android:text="@string/dark_mode"/>
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sc_darkmode"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -61,15 +64,18 @@
                 android:layout_alignTop="@id/iv_language"
                 android:layout_alignBottom="@id/iv_language"
                 android:gravity="center_vertical"
-                android:text="Ngôn ngữ"/>
+                android:text="@string/language"/>
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spn_language"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_alignTop="@id/tv_language"
+                android:layout_alignBottom="@id/tv_language"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_marginEnd="@dimen/margin_16" />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/layout_term"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_24">
@@ -91,7 +97,7 @@
                 android:layout_marginStart="@dimen/margin_8"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:text="Điều khoản"/>
+                android:text="@string/terms_and_conditions"/>
             <TextView
                 android:id="@+id/tv_policy_body"
                 android:layout_width="wrap_content"
@@ -99,10 +105,11 @@
                 android:layout_toEndOf="@id/iv_policy"
                 android:layout_marginStart="@dimen/margin_8"
                 android:layout_below="@+id/tv_policy"
-                android:text="Các điêều khoản của ứng dụng"/>
+                android:text="@string/app_terms"/>
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/layout_help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16">
@@ -123,7 +130,7 @@
                 android:layout_marginStart="@dimen/margin_8"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:text="Giúp chúng tôi cải thiện ứng dụng"/>
+                android:text="@string/help_improve_app"/>
             <TextView
                 android:id="@+id/tv_gopy_body"
                 android:layout_width="wrap_content"
@@ -131,10 +138,11 @@
                 android:layout_toEndOf="@id/iv_gopy"
                 android:layout_marginStart="@dimen/margin_8"
                 android:layout_below="@+id/tv_gopy_title"
-                android:text="Bạn có vấn đề hay góp ý gì?"/>
+                android:text="@string/any_issues_or_suggestions"/>
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/layout_rate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16">
@@ -156,7 +164,7 @@
                 android:layout_marginStart="@dimen/margin_8"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:text="Đánh giá ứng dụng"/>
+                android:text="@string/rate_app"/>
             <TextView
                 android:id="@+id/tv_vote_body"
                 android:layout_width="wrap_content"
@@ -164,13 +172,13 @@
                 android:layout_toEndOf="@id/iv_vote"
                 android:layout_marginStart="@dimen/margin_8"
                 android:layout_below="@+id/tv_vote_title"
-                android:text="Đánh giá 5 sao giúp chúng tôi thêm động lực cải thiện ứng dụng"/>
+                android:text="@string/rate_five_stars"/>
         </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16"
-            android:text="Phiên bản v1.0.0"
+            android:text="@string/version"
             android:gravity="center"
             android:fontFamily="@font/svn_avo"/>
     </LinearLayout>

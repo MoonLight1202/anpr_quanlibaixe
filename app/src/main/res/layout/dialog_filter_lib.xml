@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
-            android:text="Tất cả" />
+            android:text="@string/all" />
 
         <RadioButton
             android:id="@+id/radioPaid"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
-            android:text="Đã thanh toán" />
+            android:text="@string/paid" />
 
         <RadioButton
             android:id="@+id/radioUnpaid"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
-            android:text="Chưa thanh toán" />
+            android:text="@string/unpaid" />
     </RadioGroup>
 
 

@@ -34,12 +34,24 @@
         <item name="colorAccent">#E61736</item>
     </style>
     <style name="Base.Theme.CuuToi" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">@color/purpil_1</item>
+    </style>
+    <style name="AppTheme.CuuToi.Dark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:editTextColor">@color/colorTextPrimary</item>
         <item name="android:textColorHint">#80FFFFFF</item>
+    </style>
+    <style name="DatePickerDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/purpil_1</item>
+        <item name="colorPrimaryVariant">@color/purpil_2</item>
+        <item name="colorOnPrimary">@color/purpil_3</item>
     </style>
 </resources>

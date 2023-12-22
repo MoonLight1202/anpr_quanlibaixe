@@ -43,6 +43,13 @@ class PreferenceHelper(private val context: Context, name: String = PREFERENCES_
         set(value) {
             sharedPreferences.edit().putBoolean(globalHelper.rememberAccount, value).apply()
         }
+    var restart_app: Boolean
+        get() {
+            return sharedPreferences.getBoolean("restart_app", false)
+        }
+        set(value) {
+            sharedPreferences.edit().putBoolean("restart_app", value).apply()
+        }
     var price_motorbike_hour: Int
         get() {
             return sharedPreferences.getInt(globalHelper.price_motorbike_hour, 0)
@@ -84,6 +91,15 @@ class PreferenceHelper(private val context: Context, name: String = PREFERENCES_
         }
         set(value) {
             sharedPreferences.edit().putInt(globalHelper.price_car_month, value).apply()
+        }
+    var current_language: String
+        get() {
+            return sharedPreferences.getString(
+                globalHelper.currentLanguage, "vi"
+            ) ?: "vi"
+        }
+        set(value) {
+            sharedPreferences.edit().putString(globalHelper.currentLanguage, value).apply()
         }
 
 }
